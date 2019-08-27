@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_135328) do
+ActiveRecord::Schema.define(version: 2019_08_27_151206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "claims", force: :cascade do |t|
+    t.date "arrival_time"
+    t.date "departure_time"
+    t.string "train_id"
+    t.string "location_from"
+    t.string "location_to"
+    t.string "delay_duration"
+    t.string "reason_for_delay"
+    t.bigint "ticket_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticket_id"], name: "index_claims_on_ticket_id"
+    t.index ["user_id"], name: "index_claims_on_user_id"
+  end
+
+  create_table "photo_cards", force: :cascade do |t|
+    t.string "photo"
+    t.string "card_number"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_photo_cards_on_user_id"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "ticket_number"
+    t.float "price"
+    t.date "valid_from"
+    t.date "expiry_date"
+    t.string "ticket_type"
+    t.string "ticket_photo"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tickets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +61,22 @@ ActiveRecord::Schema.define(version: 2019_08_26_135328) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "address"
+    t.string "postcode"
+    t.string "city"
+    t.string "country"
+    t.string "title"
+    t.string "sort_code"
+    t.string "account_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "claims", "tickets"
+  add_foreign_key "claims", "users"
+  add_foreign_key "photo_cards", "users"
+  add_foreign_key "tickets", "users"
 end
