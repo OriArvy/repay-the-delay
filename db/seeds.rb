@@ -16,6 +16,6 @@ ticket_9 = Ticket.create!(
   ticket_type: "season",
   user: user_1)
   url9 = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/British_rail_ticket_Wellington_Shrewsbury.jpg/250px-British_rail_ticket_Wellington_Shrewsbury.jpg"
-  ticket_9.remote_ticket_photo_url = url9
+  ticket_9.remote_photo_url = url9
   ticket_9.save!
 
