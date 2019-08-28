@@ -2,11 +2,21 @@
 <p>Repay the delay</p>
 
 <%= form_tag search_path, method: :get do %>
-  <%= label_tag(:origin, "From:") %>
-  <%= text_field_tag(:origin) %>
+  <select class="select2" name="origin">
+    <option value="">From...</option>
+    <% @stations.each do |station| %>
+    <option value="<%= station.code %>"
+      ><%= station.name %></option>
+    <% end %>
+  </select>
 
-  <%= label_tag(:destination, "To:") %>
-  <%= text_field_tag(:destination) %>
+  <select class="select2" name="destination">
+    <option value="">To...</option>
+    <% @stations.each do |station| %>
+    <option value="<%= station.code %>"
+      ><%= station.name %></option>
+    <% end %>
+  </select>
 
   <%= label_tag(:destination, "Departure") %>
   <%= datetime_local_field(:departure, :time) %>
@@ -15,16 +25,13 @@
 <% end %>
 
 
-<!-- ben select2 code -->
 
-<select class="select2" name="country">
-  <option value="AL">Alabama [AL]</option>
-  <option value="WY">Wyoming [WY]</option>
-</select>
+<!-- replaced code
 
-<!-- ben select2 code end -->
+  <%= label_tag(:origin, "From:") %>
+  <%= text_field_tag(:origin) %>
 
-
-
+  <%= label_tag(:destination, "To:") %>
+  <%= text_field_tag(:destination) %> -->
 
 
