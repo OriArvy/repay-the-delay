@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 2019_08_28_160906) do
     t.date "valid_from"
     t.date "expiry_date"
     t.string "ticket_type"
-    t.string "ticket_photo"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
