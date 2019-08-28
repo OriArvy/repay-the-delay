@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem "watir", "~> 6.16"
+gem "select2-rails"
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
