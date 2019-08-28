@@ -1,3 +1,38 @@
 From: <%= params[:origin] %>
 To: <%= params[:destination] %>
 Time: <%= params[:departure][:time] %>
+
+<h1>Trains</h1>
+
+
+<% @response_trains["Services"].each do |item| %>
+<div>
+  <p>Train left <%= @from %> at: <%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></p>
+  <p>Train arrived in <%= @to %> at: <%= item["serviceAttributesMetrics"]["gbtt_pta"] %></p>
+  <p>Train ID: <%= item["serviceAttributesMetrics"]["rids"] %></p>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+<h1>Show Page New Claim</h1>
+<p>From: <%= @from %></p>
+<p>To:   <%= @to %></p>
+<p>Date: <%= @date %></p>
+<p>Schedule Time of Arrival: <%= @result["gbtt_pta"] %></p>
+<p>Actual Time of Arrival: <%= @result["actual_ta"] %></p>
+<% if @result["late_canc_reason"] == "" %>
+  <p>Info: Your train was on time!</p>
+<% else %>
+  <p>Info: Your train was delayed! Reason for Delay: <%= @result["late_canc_reason"] %></p>
+<% end %>
+
+
