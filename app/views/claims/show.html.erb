@@ -2,7 +2,6 @@
 <%= link_to "Add a ticket", new_ticket_path %>
 <% current_user.tickets.each do |ticket| %>
 <%#= cl_image_tag ticket.ticket_photo %>
-<%= cl_image_tag(ticket.ticket_photo), width: 400, height: 300, crop: :fill) %>
 <% end %>
-<%= Hello %>
+<%= "Hello" %>
 <p>Find me in app/views/claims/show.html.erb</p>
