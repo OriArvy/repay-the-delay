@@ -64,7 +64,7 @@ class PagesController < ApplicationController
     api_key = ENV['HSP_API_KEY']
     url = "https://hsp-prod.rockshore.net/api/v1/serviceDetails"
 
-    train_id = 201908277149403
+    train_id = 201908268113516
     begin
       response = RestClient.post(url, {rid: train_id}.to_json, {"Content-Type"=>'application/json', "Authorization" => ENV['HSP_API_KEY']})
     rescue => e
