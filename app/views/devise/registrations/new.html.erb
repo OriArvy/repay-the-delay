@@ -4,6 +4,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                input_html: { autocomplete: "title" } %>
+    <%= f.input :first_name,
+                required: true,
+                input_html: { autocomplete: "First Name" } %>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "Last Name" } %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,6 +24,27 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "phone number" } %>
+    <%= f.input :address,
+                required: true,
+                input_html: { autocomplete: "address" } %>
+    <%= f.input :country,
+                required: true,
+                input_html: { default: "United Kingdom" } %>
+    <%= f.input :city,
+                required: true,
+                input_html: { autocomplete: "city" } %>
+    <%= f.input :postcode,
+                required: true,
+                input_html: { autocomplete: "postcode" } %>
+    <%= f.input :sort_code,
+                required: true,
+                input_html: { autocomplete: "sort_code" } %>
+    <%= f.input :account_number,
+                required: true,
+                input_html: { autocomplete: "account_number" } %>
   </div>
 
   <div class="form-actions">
