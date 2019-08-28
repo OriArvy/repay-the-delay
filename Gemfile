@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem "watir", "~> 6.16"
+gem "select2-rails"
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -16,7 +18,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'country_select'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
