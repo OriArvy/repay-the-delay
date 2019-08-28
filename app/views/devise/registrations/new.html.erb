@@ -15,6 +15,28 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "phone number" } %>
+    <%= f.input :address,
+                required: true,
+                input_html: { autocomplete: "address" } %>
+    <%= f.input :postcode,
+                required: true,
+                input_html: { autocomplete: "postcode" } %>
+    <%= f.input :country,
+                required: true,
+                input_html: { default: "United Kingdom" } %>
+    <%= f.input :city,
+                required: true,
+                input_html: { autocomplete: "city" } %>
+    <%= f.input :title,
+                required: true,
+                input_html: { autocomplete: "title" } %>
+    <%= f.input :sort_code,
+                required: true,
+                input_html: { autocomplete: "sort_code" } %>
+
   </div>
 
   <div class="form-actions">
