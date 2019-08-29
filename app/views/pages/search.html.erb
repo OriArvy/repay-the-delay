@@ -1,26 +1,46 @@
-From: <%= params[:origin] %>
-To: <%= params[:destination] %>
-Time: <%= params[:departure][:time] %>
-
-<h1>Trains</h1>
 
 
-<% @response_trains["Services"].each do |item| %>
-  <div>
-    <p>Train left <%= @response_trains["header"]["from_location"] %> at: <%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></p>
-    <p>Train arrived in <%= @response_trains["header"]["to_location"] %> at: <%= item["serviceAttributesMetrics"]["gbtt_pta"] %></p>
-    <p>Train ID: <%= item["serviceAttributesMetrics"]["rids"][0] %></p>
-    <form class="form" action="/claims" method="post">
-      <!-- the following hidden field tags pass to params info is only accessible in first API call and which we will need to create a new claim  -->
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <%= hidden_field_tag :train_id, item["serviceAttributesMetrics"]["rids"][0] %>
-      <%= hidden_field_tag :origin, @response_trains["header"]["from_location"] %>
-      <%= hidden_field_tag :destination, @response_trains["header"]["to_location"] %>
-      <%= hidden_field_tag :departure_time, item["serviceAttributesMetrics"]["gbtt_ptd"] %>
-      <input type="submit" value="Select">
-    </form>
-  </div>
-<% end %>
+
+
+<div class="container text-center pt-2">
+  <h1>Results</h1>
+
+  From: <%= params[:origin] %>
+  To: <%= params[:destination] %>
+  Time: <%= params[:departure][:time] %>
+
+  <% @response_trains["Services"].each do |item| %>
+    <div class="row justify-content-center">
+      <div class="card mt-3 mb-3 pt-2 pb-2 col-lg-6">
+        <div class="row justify-content-around">
+          <div class="text-center col-lg-2">
+            <p><%= @response_trains["header"]["from_location"] %></p>
+            <h3><%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></h3>
+          </div>
+          <div>
+            <br>
+            <h3 class="pl-1 pr-1"><i class="fas fa-long-arrow-alt-right"></i></h3>
+          </div>
+          <div class="text-center col-lg-2">
+            <p><%= @response_trains["header"]["to_location"] %></p>
+            <h3><%= item["serviceAttributesMetrics"]["gbtt_pta"] %></h3>
+          </div>
+        </div>
+
+        <% item["serviceAttributesMetrics"]["rids"][0] %>
+        <form class="form" action="/claims" method="post">
+          <!-- the following hidden field tags pass to params info is only accessible in first API call and which we will need to create a new claim  -->
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= hidden_field_tag :train_id, item["serviceAttributesMetrics"]["rids"][0] %>
+          <%= hidden_field_tag :origin, @response_trains["header"]["from_location"] %>
+          <%= hidden_field_tag :destination, @response_trains["header"]["to_location"] %>
+          <%= hidden_field_tag :departure_time, item["serviceAttributesMetrics"]["gbtt_ptd"] %>
+          <input type="submit" value="Select">
+        </form>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 
 
