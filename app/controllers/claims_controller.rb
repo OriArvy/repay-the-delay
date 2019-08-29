@@ -19,14 +19,20 @@ class ClaimsController < ApplicationController
     @ticket = @current_user.tickets[0]
     @claim.user = @user
     @claim.ticket = @ticket
-    @claim.save
-    redirect_to claim_path(@claim)
+
+
+    if @claim.save
+      redirect_to claim_path(@claim)
+    else
+      redirect_to root_path
+    end
 
     # if @claim.save
     #
     # else
     #   redirect_to root_path
     # end
+
   end
 
   def show
@@ -44,7 +50,6 @@ class ClaimsController < ApplicationController
     rescue => e
       e.response
     end
-
     # convert the hash of the complete response and access the information on arrivals
     @response_complete = JSON.parse(response.body)["serviceAttributesDetails"]
     response_details = JSON.parse(response.body)["serviceAttributesDetails"]["locations"]
