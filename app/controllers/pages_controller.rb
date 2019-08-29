@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   def search
 
     api_call_trains
-    api_call_train_detail
   end
 
   private
@@ -47,7 +46,7 @@ class PagesController < ApplicationController
       e.response
     end
     @response_trains = JSON.parse(response.body)
-
+  end
 
 # from_loc = hash["headers"]
 # from_loc = hash["from_location"]
@@ -57,34 +56,8 @@ class PagesController < ApplicationController
 
 
 
-  end
-
-  def api_call_train_detail
-
-    api_key = ENV['HSP_API_KEY']
-    url = "https://hsp-prod.rockshore.net/api/v1/serviceDetails"
-
-    train_id = 201908268113516
-    begin
-      response = RestClient.post(url, {rid: train_id}.to_json, {"Content-Type"=>'application/json', "Authorization" => ENV['HSP_API_KEY']})
-    rescue => e
-      e.response
-    end
-
-    # convert the hash of the complete response and access the information on arrivals
-    response_details = JSON.parse(response.body)["serviceAttributesDetails"]["locations"]
-
-    # extract the hash with the information on my arrival and save it as result
-    response_details.each do |item|
-     if item["location"] == @to
-      @result = item
-     end
-    end
-
-
-
-  end
 end
+
 
 
 # Formats for API Call on train times:

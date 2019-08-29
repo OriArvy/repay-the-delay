@@ -7,37 +7,21 @@ Time: <%= params[:departure][:time] %>
 
 <% @response_trains["Services"].each do |item| %>
   <div>
-    <p>Train left <%= @from %> at: <%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></p>
-    <p>Train arrived in <%= @to %> at: <%= item["serviceAttributesMetrics"]["gbtt_pta"] %></p>
+    <p>Train left <%= @response_trains["header"]["from_location"] %> at: <%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></p>
+    <p>Train arrived in <%= @response_trains["header"]["to_location"] %> at: <%= item["serviceAttributesMetrics"]["gbtt_pta"] %></p>
     <p>Train ID: <%= item["serviceAttributesMetrics"]["rids"][0] %></p>
     <form class="form" action="/claims" method="post">
+      <!-- the following hidden field tags pass to params info is only accessible in first API call and which we will need to create a new claim  -->
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= hidden_field_tag :train_id, item["serviceAttributesMetrics"]["rids"][0] %>
+      <%= hidden_field_tag :origin, @response_trains["header"]["from_location"] %>
+      <%= hidden_field_tag :destination, @response_trains["header"]["to_location"] %>
+      <%= hidden_field_tag :departure_time, item["serviceAttributesMetrics"]["gbtt_ptd"] %>
       <input type="submit" value="Select">
     </form>
   </div>
 <% end %>
 
 
-
-
-<!-- link_to "Select",claims_path, method: :post, value: , name: "train_id", type: "submit"
-
- -->
-
-
-
-
-<h1>Show Page New Claim</h1>
-<p>From: <%= @from %></p>
-<p>To:   <%= @to %></p>
-<p>Date: <%= @date %></p>
-<p>Schedule Time of Arrival: <%= @result["gbtt_pta"] %></p>
-<p>Actual Time of Arrival: <%= @result["actual_ta"] %></p>
-<% if @result["late_canc_reason"] == "" %>
-  <p>Info: Your train was on time!</p>
-<% else %>
-  <p>Info: Your train was delayed! Reason for Delay: <%= @result["late_canc_reason"] %></p>
-<% end %>
 
 
