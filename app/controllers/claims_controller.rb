@@ -19,23 +19,20 @@ class ClaimsController < ApplicationController
     @ticket = @current_user.tickets[0]
     @claim.user = @user
     @claim.ticket = @ticket
-<<<<<<< HEAD
+
 
     if @claim.save
       redirect_to claim_path(@claim)
     else
       redirect_to root_path
     end
-=======
-    @claim.save
-    redirect_to claim_path(@claim)
 
     # if @claim.save
     #
     # else
     #   redirect_to root_path
     # end
->>>>>>> 953b882a1b58427c45f91b4306c15dd44de687a6
+
   end
 
   def show
