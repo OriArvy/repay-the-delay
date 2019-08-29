@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_160906) do
+ActiveRecord::Schema.define(version: 2019_08_29_110739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "claims", force: :cascade do |t|
-    t.date "arrival_time"
-    t.date "departure_time"
     t.string "train_id"
     t.string "location_from"
     t.string "location_to"
@@ -27,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_160906) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "departure_date"
+    t.string "departure_time"
     t.index ["ticket_id"], name: "index_claims_on_ticket_id"
     t.index ["user_id"], name: "index_claims_on_user_id"
   end
@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_160906) do
     t.string "address"
     t.string "postcode"
     t.string "city"
-    t.string "country"
     t.string "title"
     t.string "sort_code"
     t.string "account_number"
