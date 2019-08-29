@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get "search", to: "pages#search"
+  get "profile", to: "pages#profile"
 
-  resources :claims, only: [:new, :create, :show]
-  resources :tickets, only: [:new, :create]
+  resources :claims, only: [:new, :create, :show, :index]
+  resources :tickets, only: [:new, :create, :index]
   resources :photo_cards, only: [:new, :create]
 
 end
