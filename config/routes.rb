@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :claims, only: [:new, :create, :show]
   resources :tickets, only: [:new, :create]
+  resources :photo_cards, only: [:new, :create]
 
 end
 

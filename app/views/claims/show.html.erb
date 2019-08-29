@@ -1,15 +1,22 @@
-<h1>Claims#show</h1>
+<h1>Show Claim</h1>
 <%= link_to "Add a ticket", new_ticket_path %>
-<p>Find me in app/views/claims/show.html.erb</p>
+
+<%= link_to "Add a photo card", new_photo_card_path %>
 
 <h1>Show Page New Claim</h1>
 <p>From: <%= @claim.location_from %></p>
 <p>To:   <%= @claim.location_to %></p>
 <p>Time: <%= @claim.departure_time %></p>
-<p>Date: needs to be coded</p>
-<p>Delayed for: when done: claim.delay_duration in pe </p>
+<p>Date: <%= @claim.departure_date %></p>
+
+<% if @claim.delay_duration.to_i.positive? %>
+  <p>Delayed for: <%= @claim.delay_duration %> min</p>
+<% end %>
+
+
 <% if @claim.reason_for_delay == "" %>
   <p>Info: Your train was on time!</p>
 <% else %>
   <p>Info: Your train was delayed! Reason for Delay: <%= @claim.reason_for_delay %></p>
 <% end %>
+

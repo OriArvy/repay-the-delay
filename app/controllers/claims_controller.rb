@@ -5,25 +5,37 @@ class ClaimsController < ApplicationController
     @destination = params[:destination]
     @departure_time = params[:departure_time]
 
-    @train_id = params[:train_id]
+    @train_id = params[:train_id].to_i
 
-    api_call_train_detail
+    api_call_train_detail(@train_id)
 
     @date = @response_complete["date_of_service"]
-    # delay_duration = @result
+
+    @delay_duration = calculate_delay(@result)
     @reason_for_delay = @result["late_canc_reason"]
 
-    @claim = Claim.new(location_from: @origin, location_to: @destination, departure_time: @departure_time)
+    @claim = Claim.new(delay_duration: @delay_duration, departure_date: @date, train_id: @train_id, reason_for_delay: @reason_for_delay, location_from: @origin, location_to: @destination, departure_time: @departure_time)
     @user = current_user
     @ticket = @current_user.tickets[0]
     @claim.user = @user
     @claim.ticket = @ticket
+<<<<<<< HEAD
 
     if @claim.save
       redirect_to claim_path(@claim)
     else
       redirect_to root_path
     end
+=======
+    @claim.save
+    redirect_to claim_path(@claim)
+
+    # if @claim.save
+    #
+    # else
+    #   redirect_to root_path
+    # end
+>>>>>>> 953b882a1b58427c45f91b4306c15dd44de687a6
   end
 
   def show
@@ -32,12 +44,10 @@ class ClaimsController < ApplicationController
 
   private
 
-  def api_call_train_detail
+  def api_call_train_detail(train_id)
 
-    api_key = ENV['HSP_API_KEY']
     url = "https://hsp-prod.rockshore.net/api/v1/serviceDetails"
 
-    train_id = 201908268113516
     begin
       response = RestClient.post(url, {rid: train_id}.to_json, {"Content-Type"=>'application/json', "Authorization" => ENV['HSP_API_KEY']})
     rescue => e
@@ -53,8 +63,17 @@ class ClaimsController < ApplicationController
       @result = item
      end
     end
+  end
+
+  def calculate_delay(result)
+    require 'date'
+    planned = DateTime.strptime(result['gbtt_pta'], '%M%S')
+    actual = DateTime.strptime(result['actual_ta'], '%M%S')
+    delay_in_min = ((actual - planned)*3600*24).to_i.to_s
+
 
   end
+
 end
 
 # location_from, :location_to, :departure_time, presence: true
