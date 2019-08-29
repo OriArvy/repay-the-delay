@@ -1,0 +1,25 @@
+#nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: purple;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.nav-btn {
+  color: #fff;
+  background-color: orange;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+.nav-btn:hover {
+  opacity: 0.95;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-btn  a{
+  flex-grow: 1;
+}

@@ -1,0 +1,11 @@
+<%= render 'shared/user_area_buttons_under_navbar' %>
+
+<h1>This will be the page displaying all users tickets</h1>
+
+<% current_user.tickets.each do |ticket| %>
+
+<p><%= ticket.expiry_date %></p>
+<img src="<%= ticket.photo %>" alt="">
+
+<% end %>
+

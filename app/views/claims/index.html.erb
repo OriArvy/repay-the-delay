@@ -1,0 +1,19 @@
+<%= render 'shared/user_area_buttons_under_navbar' %>
+
+<h1>Your claims</h1>
+
+<% current_user.claims.each do |claim| %>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <p>From: <%= claim.location_from %></p>
+    <p>To: <%= claim.location_to %></p>
+    <p>At: <%= claim.departure_time %></p>
+    <p>On: <%= claim.departure_date %></p>
+  </div>
+</div>
+<% end %>
+
+
+
