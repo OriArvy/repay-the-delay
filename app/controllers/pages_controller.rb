@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :search]
 
   def home
+    @stations = Station.all
   end
 
   def search
@@ -58,10 +59,9 @@ class PagesController < ApplicationController
 
 end
 
-
-
 # Formats for API Call on train times:
 # from = "WTY"
 # to = "CLJ"
 # dep_time = "1501"
 # date = "2019-08-26"
+
