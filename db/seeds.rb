@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Station.destroy_all
-User.destroy_all
 Ticket.destroy_all
+User.destroy_all
 
 user_2 = User.create!(
   title: "Mr", first_name: "Ben", last_name: "Whitehouse", email: "ben@repay.com", password: "111111", phone_number: "ben101", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", country: "United Kingdom", sort_code: "444444", account_number: "44444444")
