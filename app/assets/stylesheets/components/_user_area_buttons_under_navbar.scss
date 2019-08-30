@@ -2,19 +2,22 @@
   list-style: none;
   display: flex;
   justify-content: space-around;
-  background-color: purple;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  background-color: #62555F;
 }
 
-.nav-btn {
-  width: 30%;
-
+.nav-link {
+  color: #fff;
+  font-weight: lighter;
+  padding-right: 60px;
 }
 
-.btn-warning:hover {
+.nav-link:hover {
   opacity: 0.95;
   text-decoration: none;
-  color: #fff;
+  color: rgb(240, 240, 240);
+}
+
+.nav-li {
+  text-align: none;
 }
 

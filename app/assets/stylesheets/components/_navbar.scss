@@ -1,12 +1,15 @@
 .navbar-lewagon {
-  display: flex;
   justify-content: space-around;
-  background: purple;
+  background-color: #62555F;
   color: #fff;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-lewagon h1 {
+  font-weight: bold;
+  text-align: center;
+  padding-top: 15px;
 }
+
+
 
 
