@@ -11,7 +11,9 @@
         <div class="row justify-content-around">
           <div class="text-center col-4">
             <p><%= @response_trains["header"]["from_location"] %></p>
-            <h3><%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></h3>
+            <h3>
+              <%= "#{item["serviceAttributesMetrics"]["gbtt_ptd"].slice(0, 2)}:#{item["serviceAttributesMetrics"]["gbtt_ptd"].slice(2, 2)}" %>
+            </h3>
           </div>
           <div>
             <br>
@@ -19,10 +21,11 @@
           </div>
           <div class="text-center col-4">
             <p><%= @response_trains["header"]["to_location"] %></p>
-            <h3><%= item["serviceAttributesMetrics"]["gbtt_pta"] %></h3>
+            <h3>
+              <%= "#{item["serviceAttributesMetrics"]["gbtt_pta"].slice(0, 2)}:#{item["serviceAttributesMetrics"]["gbtt_pta"].slice(2, 2)}" %>
+            </h3>
           </div>
         </div>
-
         <% item["serviceAttributesMetrics"]["rids"][0] %>
         <form class="form" action="/claims" method="post">
           <!-- the following hidden field tags pass to params info is only accessible in first API call and which we will need to create a new claim  -->
