@@ -1,8 +1,4 @@
-
-
-
-
-<div class="container text-center pt-2">
+<div class="container-fluid text-center pt-2">
   <h1>Results</h1>
 
   From: <%= params[:origin] %>
@@ -10,10 +6,10 @@
   Time: <%= params[:departure][:time] %>
 
   <% @response_trains["Services"].each do |item| %>
-    <div class="row justify-content-center">
-      <div class="card mt-3 mb-3 pt-2 pb-2 col-lg-6">
+    <div class="row justify-content-center m-3">
+      <div class="card col-12">
         <div class="row justify-content-around">
-          <div class="text-center col-lg-2">
+          <div class="text-center col-4">
             <p><%= @response_trains["header"]["from_location"] %></p>
             <h3><%= item["serviceAttributesMetrics"]["gbtt_ptd"]  %></h3>
           </div>
@@ -21,7 +17,7 @@
             <br>
             <h3 class="pl-1 pr-1"><i class="fas fa-long-arrow-alt-right"></i></h3>
           </div>
-          <div class="text-center col-lg-2">
+          <div class="text-center col-4">
             <p><%= @response_trains["header"]["to_location"] %></p>
             <h3><%= item["serviceAttributesMetrics"]["gbtt_pta"] %></h3>
           </div>
