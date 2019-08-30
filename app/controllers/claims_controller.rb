@@ -27,17 +27,19 @@ class ClaimsController < ApplicationController
       redirect_to root_path
     end
 
-    # if @claim.save
-    #
-    # else
-    #   redirect_to root_path
-    # end
-
   end
 
   def show
     @claim = Claim.find(params[:id])
     @delay_reason = Cancel.find_by_code(@claim.reason_for_delay)
+  end
+
+  def update
+    @claim = Claim.find(params[:id])
+    ticket = Ticket.find(params[:claim][:ticket_id])
+    @claim.ticket = ticket
+    @claim.save
+    redirect_to claims_path
   end
 
   private

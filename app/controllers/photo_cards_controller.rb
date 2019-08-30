@@ -1,9 +1,11 @@
 class PhotoCardsController < ApplicationController
   def new
+    @claim = Claim.find(params[:claim_id])
     @photo_card = PhotoCard.new
   end
 
   def create
+    @claim = Claim.find(params[:claim_id])
     @photo_card = PhotoCard.new(photocard_params)
     @user = current_user
     @photo_card.user = @user
