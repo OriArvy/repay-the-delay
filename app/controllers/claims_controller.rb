@@ -68,10 +68,7 @@ class ClaimsController < ApplicationController
     planned = DateTime.strptime(result['gbtt_pta'], '%M%S')
     actual = DateTime.strptime(result['actual_ta'], '%M%S')
     delay_in_min = ((actual - planned)*3600*24).to_i.to_s
-
-
   end
 
 end
 
-# location_from, :location_to, :departure_time, presence: true
