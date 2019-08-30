@@ -25,7 +25,6 @@ class PagesController < ApplicationController
     return day_type
   end
 
-
   def api_call_trains
     @from = params[:origin]
     @to = params[:destination]
@@ -40,7 +39,6 @@ class PagesController < ApplicationController
 
     day_type = find_weekday(@date)
     search_url = "https://hsp-prod.rockshore.net/api/v1/serviceMetrics"
-
     begin
       response = RestClient.post(search_url, {from_loc: @from, to_loc: @to, from_time: dep_time_start, to_time: dep_time_end, from_date: @date, to_date: @date, days: day_type}.to_json, {"Content-Type"=>'application/json', "Authorization" => ENV['HSP_API_KEY']})
     rescue => e
@@ -49,19 +47,4 @@ class PagesController < ApplicationController
     @response_trains = JSON.parse(response.body)
   end
 
-# from_loc = hash["headers"]
-# from_loc = hash["from_location"]
-# to_loc = hash["to_location"]
-# will get the times for the list of trains
-
-
-
-
 end
-
-# Formats for API Call on train times:
-# from = "WTY"
-# to = "CLJ"
-# dep_time = "1501"
-# date = "2019-08-26"
-

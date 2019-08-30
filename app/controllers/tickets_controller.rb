@@ -23,4 +23,4 @@ class TicketsController < ApplicationController
     params.require(:ticket).permit(:ticket_number, :price, :expiry_date, :ticket_type, :photo)
   end
 
-  end
+end
