@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_110739) do
+ActiveRecord::Schema.define(version: 2019_08_29_152112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_08_29_110739) do
   create_table "tickets", force: :cascade do |t|
     t.string "ticket_number"
     t.float "price"
-    t.date "valid_from"
     t.date "expiry_date"
     t.string "ticket_type"
     t.bigint "user_id"
