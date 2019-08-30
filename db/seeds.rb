@@ -21,44 +21,36 @@ user_5 = User.create!(
 
 
 ticket_2 = Ticket.new(
-  ticket_number: '444444444',
+  ticket_number: '44444',
   price: 264.23,
-  valid_from: 20190302,
   expiry_date: 20200302,
-  ticket_type: "season",
   user: user_2)
   url2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/British_rail_ticket_Wellington_Shrewsbury.jpg/250px-British_rail_ticket_Wellington_Shrewsbury.jpg"
   ticket_2.remote_photo_url = url2
   ticket_2.save!
 
 ticket_3 = Ticket.new(
-  ticket_number: '555555555',
+  ticket_number: '55555',
   price: 413,
-  valid_from: 20190811,
   expiry_date: 20190912,
-  ticket_type: "monthly",
   user: user_3)
   url3 = "https://i2-prod.mirror.co.uk/incoming/article11095561.ece/ALTERNATES/s615b/SUNDAY-MIRROR-PRODUCTION-TICKETS.jpg"
   ticket_3.remote_photo_url = url3
   ticket_3.save!
 
 ticket_4 = Ticket.new(
-  ticket_number: '666666666',
+  ticket_number: '66666',
   price: 53.12,
-  valid_from: 20190812,
   expiry_date: 20190819,
-  ticket_type: "weekly",
   user: user_4)
   url4 = "https://www.google.com/search?biw=1920&bih=934&tbm=isch&sa=1&ei=bqdmXfCVF434abCJsNgO&q=national+rails+season+ticket&oq=national+rails+season+ticket&gs_l=img.3...388808.388808..389030...0.0..0.47.47.1......0....1..gws-wiz-img.dzS0NqN43-o&ved=0ahUKEwjwhLCC-qXkAhUNfBoKHbAEDOsQ4dUDCAY&uact=5#imgdii=ZhRhQOrFYL6MLM:&imgrc=-LHXB6690CFQKM:"
   ticket_4.remote_photo_url = url4
   ticket_4.save!
 
 ticket_5 = Ticket.new(
-  ticket_number: '777777777',
+  ticket_number: '77777',
   price: 420,
-  valid_from: 20190812,
   expiry_date: 20200819,
-  ticket_type: "season",
   user: user_5)
   url5 = "http://www.bluemaize.net/im/arts-crafts-sewing/train-tickets-8.jpg"
   ticket_5.remote_photo_url = url5
