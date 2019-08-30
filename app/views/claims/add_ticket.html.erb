@@ -1,3 +1,0 @@
-<% @tickets.each do |ticket| %>
-  <%= link_to ticket.ticket_number, attach_ticket_path(ticket: ticket, claim: @claim), method: :post  %>
-<% end %>

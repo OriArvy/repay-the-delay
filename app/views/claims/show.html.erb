@@ -9,11 +9,8 @@
   <p><strong>You might be entitled to compensation as the delay exceeded 15 min.</strong></p>
   <% if @claim.ticket %>
     <h6>Your ticket number:</h6>
-    <p><%= @claim.ticket.ticket_number %></p>
-    <%= link_to "Change Ticket", add_ticket_path(@claim) %>
-  <% else %>
-    <%= link_to "Add a ticket", add_ticket_path(@claim) %>
   <% end %>
+  <%= link_to "Add a new ticket", new_claim_ticket_path(@claim) %>
   <%= link_to "Add a photo card", new_photo_card_path %>
   <div>
     <input type="checkbox" id="terms" name="terms" value="accepted" checked >

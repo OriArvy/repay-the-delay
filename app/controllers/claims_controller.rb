@@ -33,19 +33,6 @@ class ClaimsController < ApplicationController
     @claim = Claim.find(params[:id])
   end
 
-  def add_ticket
-    @claim = Claim.find(params[:id])
-    @tickets = current_user.tickets
-  end
-
-  def attach_ticket
-    @claim = Claim.find(params[:claim])
-    @ticket = Ticket.find(params[:ticket])
-    @claim.ticket = @ticket
-    @claim.save
-    redirect_to claim_path(@claim)
-  end
-
   private
 
   def api_call_train_detail(train_id)
@@ -77,8 +64,5 @@ class ClaimsController < ApplicationController
     delay_in_min = ((actual - planned)*3600*24).to_i.to_s
   end
 
-
-
 end
 
-# location_from, :location_to, :departure_time, presence: true
