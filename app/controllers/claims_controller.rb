@@ -37,6 +37,7 @@ class ClaimsController < ApplicationController
 
   def show
     @claim = Claim.find(params[:id])
+    @delay_reason = Cancel.find_by_code(@claim.reason_for_delay)
   end
 
   private

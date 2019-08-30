@@ -17,6 +17,7 @@
         <p>Info: Your train was on time!</p>
       <% else %>
         <p>Info: Your train was delayed! Reason for Delay: <%= @claim.reason_for_delay %></p>
+        Full Delay reason: <%= @delay_reason.reason %>
       <% end %>
 
 
@@ -27,7 +28,7 @@
       <!-- USER HAS ONE OR MORE TICKETS -->
         <h5>Select/Add a Ticket</h5>
         <select class="dropdown" name="tickets">
-          <% current_user.tickets.each do |ticket| %>
+          <% current_user.tickets.sort.reverse.each do |ticket| %>
               <option value="<%= ticket.ticket_number %>">Ticket No:<%= ticket.ticket_number %>
                 exp: <%= ticket.expiry_date %>
               </option>
