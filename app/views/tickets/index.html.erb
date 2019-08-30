@@ -4,8 +4,10 @@
 
 <% current_user.tickets.each do |ticket| %>
 
-<p><%= ticket.expiry_date %></p>
-<img src="<%= ticket.photo %>" alt="">
+  <div class="card-product">
+    <%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %>
+    <p><%= "Ticket expiring on #{ticket.expiry_date}" %></p>
+  </div>
 
 <% end %>
 

@@ -8,18 +8,13 @@
 }
 
 .nav-btn {
-  color: #fff;
-  background-color: orange;
-  padding: 10px 25px;
-  border-radius: 5px;
+  width: 30%;
+
 }
 
-.nav-btn:hover {
+.btn-warning:hover {
   opacity: 0.95;
   text-decoration: none;
   color: #fff;
 }
 
-.nav-btn  a{
-  flex-grow: 1;
-}

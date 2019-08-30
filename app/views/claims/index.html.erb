@@ -5,12 +5,12 @@
 <% current_user.claims.each do |claim| %>
 
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
-    <p>From: <%= claim.location_from %></p>
-    <p>To: <%= claim.location_to %></p>
-    <p>At: <%= claim.departure_time %></p>
-    <p>On: <%= claim.departure_date %></p>
+    <% current_user.tickets.each do |ticket| %>
+<!--     <%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %> -->
+      <p class="claim-content"><%= "From #{claim.location_from} to #{claim.location_to}"%></p>
+      <p class="claim-content"><%= "At #{claim.departure_time} on the #{claim.departure_date}" %></p>
+    <% end %>
   </div>
 </div>
 <% end %>
