@@ -31,6 +31,7 @@
     <%= link_to "Add a ticket", new_claim_ticket_path(@claim), class: "btn btn-primary m-2" %>
   <% end %>
 
+
   <div>
     <% unless current_user.photo_card == nil  %>
       <%= cl_image_tag current_user.photo_card.photo, width: 300, height: 200, crop: :fill %>
@@ -38,17 +39,16 @@
       <%= link_to "Add a photo card", new_claim_photo_card_path(@claim), class: "btn btn-primary m-2" %>
     <% end %>
   </div>
-
   <div>
     <input type="checkbox" id="terms" name="terms" value="accepted" checked >
     <label for="terms">I accept that by submitting this claim I agree to the <%= link_to "Terms and conditions", root_path %> including checking the submitted details for accuracy and potential fraud. I confirm that I am not a robot.</label>
   </div>
 
+
   <%= simple_form_for(@claim) do |f| %>
     <%= f.input :ticket_id, as: :hidden, input_html: { value: current_user.tickets.last&.id } %>
     <%= f.submit "Claim your refund now", disabled: current_user.tickets.empty?, id: "submission" %>
   <% end %>
-
 
 
 
