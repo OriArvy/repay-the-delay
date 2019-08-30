@@ -1,4 +1,4 @@
-
+<%= render 'shared/navbar' %>
 <%= simple_form_for [@claim, @ticket] do |f| %>
  <%= f.input :ticket_number, label: 'Please provide ticket number', placeholder: "Ticket number" %>
  <%= f.input :price, label: 'Price of your ticket', placeholder: "£", label_input: "£" %>
