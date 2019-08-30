@@ -1,29 +1,36 @@
-<h1>Homepage</h1>
-<p>Repay the delay</p>
+<div class="background-image">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="content">
+      <h1 class="text-center text-white">Repay the delay</h1>
+      <div class="box form-group">
+        <h5>Select route</h5>
+        <%= form_tag search_path, method: :get do %>
+          <select class="select2 form-control" name="origin">
+            <option value="">From...</option>
+            <% @stations.each do |station| %>
+            <option value="<%= station.code %>"
+              ><%= station.name %></option>
+            <% end %>
+          </select>
 
-<%= form_tag search_path, method: :get do %>
-  <select class="select2" name="origin">
-    <option value="">From...</option>
-    <% @stations.each do |station| %>
-    <option value="<%= station.code %>"
-      ><%= station.name %></option>
-    <% end %>
-  </select>
-
-  <select class="select2" name="destination">
-    <option value="">To...</option>
-    <% @stations.each do |station| %>
-    <option value="<%= station.code %>"
-      ><%= station.name %></option>
-    <% end %>
-  </select>
-
-  <%= label_tag(:destination, "Departure") %>
-  <%= datetime_local_field(:departure, :time) %>
-
-  <%= submit_tag("Search") %>
-<% end %>
-
+          <select class="select2 form-control" name="destination">
+            <option value="">To...</option>
+            <% @stations.each do |station| %>
+            <option value="<%= station.code %>"
+              ><%= station.name %></option>
+            <% end %>
+          </select>
+          <div style="display: flex; flex-direction: column;">
+            <%= label_tag(:destination, "Departing at", class: "p") %>
+            <%= datetime_local_field(:departure, :time) %>
+          </div>
+          <%= submit_tag("Search", id: "my-btn") %>
+        <% end %>
+      </div>
+      <div class=""></div>
+    </div>
+  </div>
+</div>
 
 
 <!-- replaced code
