@@ -1,9 +1,10 @@
-<%= simple_form_for @ticket do |f| %>
-  <%= f.input :ticket_number, label: 'Please provide ticket number', placeholder: "Ticket number" %>
-  <%= f.input :price, label: 'Price of your ticket', placeholder: "£", label_input: "£" %>
-  <%= f.input :expiry_date, label: 'Ticket expiry date', placeholder: "Expiry date", as: :string  %>
-  <%= f.input :ticket_type, as: :hidden %>
-  <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-  <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a ticket' %>
-  <%= f.submit "Add a ticket" %>
+
+<%= simple_form_for [@claim, @ticket] do |f| %>
+ <%= f.input :ticket_number, label: 'Please provide ticket number', placeholder: "Ticket number" %>
+ <%= f.input :price, label: 'Price of your ticket', placeholder: "£", label_input: "£" %>
+ <%= f.input :expiry_date, label: 'Ticket expiry date', placeholder: "Expiry date", as: :string  %>
+ <%= f.input :ticket_type, as: :hidden %>
+ <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+ <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: ':camera: Upload a ticket' %>
+ <%= f.submit "Add a ticket" %>
 <% end %>
