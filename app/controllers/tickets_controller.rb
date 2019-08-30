@@ -7,7 +7,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @user = current_user
     @ticket.user = @user
-    @claim = Claim.find(params[:claim_id])
     if @ticket.save
       redirect_to root_path
     else
