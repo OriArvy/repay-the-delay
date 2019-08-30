@@ -1,8 +1,7 @@
-<%= simple_form_for @photo_card do |f| %>
+<%= simple_form_for [@claim, @photo_card] do |f| %>
   <%= f.input :card_number, label: 'Please provide card number', placeholder: "Card number" %>
   <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo card' %>
   <%= f.submit "Add a card" %>
 <% end %>
-<%#= cl_image_tag current_user.photo_card.photo, width: 400, height: 300, crop: :fill %>
-<%# Uncomment, or add line above if you want to see the photo card of current user (if you want to display it in profile?) %>
+

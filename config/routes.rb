@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get "search", to: "pages#search"
   get "profile", to: "pages#profile"
 
-  resources :claims, only: [:new, :create, :show, :index] do
+  resources :claims, only: [:new, :create, :show, :index, :update] do
     resources :tickets, only: [:new, :create]
+    resources :photo_cards, only: [:new, :create]
   end
   resources :tickets, only: [:index]
-  resources :photo_cards, only: [:new, :create]
 
 end
 
