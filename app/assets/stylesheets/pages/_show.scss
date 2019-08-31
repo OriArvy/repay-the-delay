@@ -7,15 +7,23 @@
 }
 
 .claim-alert {
-  background-color: rgba(228,29,29,1);
+  background-color: rgba(238,70,70,1);
   color: white;
   border-radius: 4px;
   width: 100%;
   box-shadow: 3px 3px 8px rgba(55,55,55,0.3);
   font-size: 14px;
+  // font-weight: bold;
+
 }
 
 .tc-text {
   font-size: 13px;
+  margin-bottom: 0px;
 
+}
+
+.delay-reason {
+  font-size: 10px;
+  font-weight: bold;
 }
