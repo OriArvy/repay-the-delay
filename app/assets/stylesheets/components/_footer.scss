@@ -1,0 +1,26 @@
+#footer {
+  background-color: #62555F;
+  color: #fff;
+  height: 60px;
+}
+
+#footer-list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
+#footer-list-item {
+  display: inline-block;
+}
+
+#footer-list-item a:hover {
+  text-decoration: none;
+  width: 30%;
+}
+
+#footer-list-item a {
+  color: #fff;
+}
