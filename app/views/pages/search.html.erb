@@ -1,45 +1,50 @@
 <div class="background-grey">
 <div class="container-fluid text-center pt-2">
-  <h3>Search Results</h3>
-
-  From: <%= params[:origin] %>
-  To: <%= params[:destination] %>
-  Time: <%= params[:departure][:time] %>
-
-  <% @response_trains["Services"].each do |item| %>
-    <form class="form" action="/claims" method="post">
-        <button type="submit" class="mt-2" id="search-card" class="search-color">
-          <!-- the following hidden field tags pass to params info is only accessible in first API call and which we will need to create a new claim  -->
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <%= hidden_field_tag :train_id, item["serviceAttributesMetrics"]["rids"][0] %>
-          <%= hidden_field_tag :origin, @response_trains["header"]["from_location"] %>
-          <%= hidden_field_tag :destination, @response_trains["header"]["to_location"] %>
-          <%= hidden_field_tag :departure_time, item["serviceAttributesMetrics"]["gbtt_ptd"] %>
-            <div class="row justify-content-between" style="width: 100vw;">
-              <div class= "col-1">
-                  <i class="fas fa-subway fa-3x pl-2 pt-3"></i>
-              </div>
-              <div class="text-center col-4 pt-2 pl-5">
-                <p class="mb-0"><%= @response_trains["header"]["from_location"] %></p>
-                <h3>
-                  <%= "#{item["serviceAttributesMetrics"]["gbtt_ptd"].slice(0, 2)}:#{item["serviceAttributesMetrics"]["gbtt_ptd"].slice(2, 2)}" %>
-                </h3>
-              </div>
-              <div class= "col-1">
-                <div class="vertical-align">
-                  <i class="fas fa-chevron-right fa-2x mt-4"></i>
+  <% if @response_trains["Services"] == [] %>
+    <form class="form" action="/" method="get">
+     <button type="submit" class="col-10 mt-2" id="search-card" class="search-color">
+        <div class="row justify-content-between" >
+          <div class="text-center col-12 pt-4 ">
+            <h3>Could not find any trains. Click here to check another train.</h3>
+          </div>
+        </div>
+     </button>
+    </form>
+  <% else %>
+    <% @response_trains["Services"].each do |item| %>
+      <form class="form" action="/claims" method="post">
+          <button type="submit" class="mt-2" id="search-card" class="search-color">
+            <!-- the following hidden field tags pass to params info is only accessible in first API call and which we will need to create a new claim  -->
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= hidden_field_tag :train_id, item["serviceAttributesMetrics"]["rids"][0] %>
+            <%= hidden_field_tag :origin, @response_trains["header"]["from_location"] %>
+            <%= hidden_field_tag :destination, @response_trains["header"]["to_location"] %>
+            <%= hidden_field_tag :departure_time, item["serviceAttributesMetrics"]["gbtt_ptd"] %>
+              <div class="row justify-content-between" style="width: 100vw;">
+                <div class= "col-1">
+                    <i class="fas fa-subway fa-3x pl-2 pt-3"></i>
+                </div>
+                <div class="text-center col-4 pt-2 pl-5">
+                  <p class="mb-0"><%= @response_trains["header"]["from_location"] %></p>
+                  <h3>
+                    <%= "#{item["serviceAttributesMetrics"]["gbtt_ptd"].slice(0, 2)}:#{item["serviceAttributesMetrics"]["gbtt_ptd"].slice(2, 2)}" %>
+                  </h3>
+                </div>
+                <div class= "col-1">
+                  <div class="vertical-align">
+                    <i class="fas fa-chevron-right fa-2x mt-4"></i>
+                  </div>
+                </div>
+                <div class="text-center col-4 pt-2 pr-5">
+                  <p class="mb-0"><%= @response_trains["header"]["to_location"] %></p>
+                  <h3>
+                    <%= "#{item["serviceAttributesMetrics"]["gbtt_pta"].slice(0, 2)}:#{item["serviceAttributesMetrics"]["gbtt_pta"].slice(2, 2)}" %>
+                  </h3>
                 </div>
               </div>
-              <div class="text-center col-4 pt-2 pr-5">
-                <p class="mb-0"><%= @response_trains["header"]["to_location"] %></p>
-                <h3>
-                  <%= "#{item["serviceAttributesMetrics"]["gbtt_pta"].slice(0, 2)}:#{item["serviceAttributesMetrics"]["gbtt_pta"].slice(2, 2)}" %>
-                </h3>
-              </div>
-            </div>
-        </button>
-
-    </form>
+          </button>
+      </form>
+    <% end %>
   <% end %>
 </div>
 </div>

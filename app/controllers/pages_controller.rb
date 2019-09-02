@@ -6,9 +6,11 @@ class PagesController < ApplicationController
   end
 
   def search
-
     api_call_trains
   end
+
+
+
 
   private
 
@@ -37,14 +39,22 @@ class PagesController < ApplicationController
     dep_time_start = (converted_time - 900).strftime("%H%M")
     dep_time_end = (converted_time + 900).strftime("%H%M")
 
+
     day_type = find_weekday(@date)
     search_url = "https://hsp-prod.rockshore.net/api/v1/serviceMetrics"
     begin
-      response = RestClient.post(search_url, {from_loc: @from, to_loc: @to, from_time: dep_time_start, to_time: dep_time_end, from_date: @date, to_date: @date, days: day_type}.to_json, {"Content-Type"=>'application/json', "Authorization" => ENV['HSP_API_KEY']})
+      @response = RestClient.post(search_url, {from_loc: @from, to_loc: @to, from_time: dep_time_start, to_time: dep_time_end, from_date: @date, to_date: @date, days: day_type}.to_json, {"Content-Type"=>'application/json', "Authorization" => ENV['HSP_API_KEY']})
     rescue => e
-      e.response
+      flash[:alert] = "No result...try again"
+      return redirect_to root_path
     end
-    @response_trains = JSON.parse(response.body)
-  end
 
+    if @response.nil?
+      raise
+      flash[:alert] = "No result...try again"
+      redirect_to root_path
+    else
+      @response_trains = JSON.parse(@response.body)
+    end
+  end
 end
