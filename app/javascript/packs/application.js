@@ -12,17 +12,18 @@ flatpickr("#flat-time", { altInput: true, time_24hr: true, enableTime: true, alt
 previewImageOnFileSelect()
 initSelect2();
 
-const ticket = document.querySelector('#claim_ticket_id')
 
+// ticket selector on claim show page
+const ticket = document.querySelector('#claim_ticket_id')
 if (ticket) {
   document.querySelector('#claim-ticket-select').addEventListener('change', (e) => {
     ticket.value = e.currentTarget.value
   })
 }
 
+// submission button on claim show page
 const terms = document.querySelector('#terms')
 const submission = document.querySelector('#submission')
-
 if (terms) {
   document.querySelector('#terms').addEventListener('change', (e) => {
     if (submission.disabled) {
@@ -33,6 +34,7 @@ if (terms) {
   })
 }
 
+// initiating submission on claim show page
 initSweetalert('#sweet-alert-demo', {
   title: "Claim Submitted",
   text: "We will keep you updated via email",
@@ -40,6 +42,7 @@ initSweetalert('#sweet-alert-demo', {
   buttons: false
 });
 
+// homage page initiate search
 initSweetalert('#my-btn', {
   icon: "https://media.giphy.com/media/11l5hkwH1zcsBG/giphy.gif",
   buttons: false,
