@@ -9,6 +9,10 @@ class AdminController < ApplicationController
     end
   end
 
+  def dashboard
+    @claims = Claim.all
+  end
+
   def review
     require 'watir'
     require 'webdrivers'
