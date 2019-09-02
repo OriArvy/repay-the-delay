@@ -36,4 +36,5 @@ initSweetalert('#sweet-alert-demo', {
   title: "Claim Submitted",
   text: "We will keep you updated via email",
   icon: "success"
+  // confirmButtonClass: "show-loading-icon"
 });
