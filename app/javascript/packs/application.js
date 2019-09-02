@@ -8,6 +8,9 @@ import 'flatpickr/dist/flatpickr.css'
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 flatpickr("#ticket_expiry_date", { defaultDate: "today", altInput: true, altFormat: "F j, Y", dateFormat: "Y-m-d", });
+flatpickr("#flat-time", { altInput: true, time_24hr: true, enableTime: true, altFormat: "F j, Y", dateFormat: "Y-m-dTH:i", defaultDate: "today", defaultHour: 3, defaultMinute: 0,});
+
+
 previewImageOnFileSelect()
 initSelect2();
 

@@ -22,7 +22,7 @@
           </select>
           <div style="display: flex; flex-direction: column;">
             <%= label_tag(:destination, "Departing at", class: "p") %>
-            <%= datetime_local_field(:departure, :time) %>
+            <%= datetime_local_field(:departure, :time, id: "flat-time") %>
           </div>
           <%= submit_tag("Search", id: "my-btn") %>
         <% end %>
