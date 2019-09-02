@@ -12,13 +12,13 @@ User.destroy_all
 Cancel.destroy_all
 
 user_2 = User.create!(
-  title: "Mr", first_name: "Ben", last_name: "Whitehouse", email: "ben@repay.com", password: "111111", phone_number: "ben101", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "444444", account_number: "44444444")
+  title: "Mr", first_name: "Ben", last_name: "Whitehouse", email: "ben@repay.com", password: "111111", phone_number: "+44 3069 990057", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "444444", account_number: "44444444")
 user_3 = User.create!(
-  title: "Mr", first_name: "Thomas", last_name: "Britz", email: "thomas@repay.com", password: "111111", phone_number: "thomas101", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "555555", account_number: "55555555")
+  title: "Mr", first_name: "Thomas", last_name: "Britz", email: "thomas@repay.com", password: "111111", phone_number: "+44 3069 990015", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "555555", account_number: "55555555")
 user_4 = User.create!(
-  title: "Mr", first_name: "Rokas", last_name: "Vaitkevicius", email: "rokas@repay.com", password: "111111", phone_number: "rokas101", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "666666", account_number: "66666666")
+  title: "Mr", first_name: "Rokas", last_name: "Vaitkevicius", email: "rokas@repay.com", password: "111111", phone_number: "+44 3069 990713", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "666666", account_number: "66666666")
 user_5 = User.create!(
-  title: "Mr", first_name: "Matt", last_name: "Annetts", email: "matt@repay.com", password: "111111", phone_number: "matt101", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "777777", account_number: "77777777")
+  title: "Mr", first_name: "Matt", last_name: "Annetts", email: "matt@repay.com", password: "111111", phone_number: "+44 3069 990344", address: "Westminster, London SW1A 1AA", postcode: "SW1A 1AA", city: "London", sort_code: "777777", account_number: "77777777")
 
 
 ticket_2 = Ticket.new(
