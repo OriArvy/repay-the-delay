@@ -43,6 +43,6 @@ initSweetalert('#sweet-alert-demo', {
 initSweetalert('#my-btn', {
   icon: "https://media.giphy.com/media/11l5hkwH1zcsBG/giphy.gif",
   buttons: false,
-  imageClass: "sweet-gif"
-
+  customClass: 'sweet-gif',
+  width: '100px'
 });
