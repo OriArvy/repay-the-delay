@@ -3,10 +3,15 @@ class PagesController < ApplicationController
 
   def home
     @stations = Station.all
+
+    if !current_user.nil?
+      if current_user.admin == true
+        redirect_to admin_path
+      end
+    end
   end
 
   def search
-
     api_call_trains
   end
 
