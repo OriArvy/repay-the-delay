@@ -74,7 +74,8 @@
       </div>
         <%= simple_form_for(@claim) do |f| %>
           <%= f.input :ticket_id, as: :hidden, input_html: { value: current_user.tickets.last&.id } %>
-          <%= f.submit "Claim your refund now", disabled: current_user.tickets.empty?, id: "submission", class: "btn btn-warning btn-block" %>
+
+          <%= f.submit "Claim your refund now", disabled: current_user.tickets.empty?, id: "submission", class: "btn btn-warning btn-block", id:"sweet-alert-demo" %>
         <% end %>
     </div>
         <% elsif @claim.delay_duration.to_i.positive? %>
