@@ -74,7 +74,7 @@
           <% unless current_user.photo_card == nil  %>
             <%= cl_image_tag(current_user.photo_card.photo, width: 90, height: 60, crop: :fill) %>
           <% else %>
-            <%= link_to "Add a photo card", new_claim_photo_card_path(@claim), class: "btn btn-primary m-2" %>
+            <%= link_to "Add a photo card", new_claim_photo_card_path(@claim), class: "btn btn-primary" %>
           <% end %>
         </div>
         </div>
