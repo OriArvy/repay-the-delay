@@ -1,4 +1,5 @@
-<%= render 'shared/navbar' %>
+
+
 
 <div class="container">
   <h4 class ="pt-4 pl-1">Claim Overview</h4>
@@ -8,11 +9,22 @@
       <span><%= "#{@claim.location_from} → #{@claim.location_to}" %></span>
       <span><%= "#{@claim.departure_time.slice(0, 2)}:#{@claim.departure_time.slice(2, 2)} on #{@claim.departure_date}" %></span>
       <div class="row justify-content-center">
-        <% if @claim.delay_duration.to_i >= 15 %>
+        <% if @train_late_or_cancelled %>
           <div class="text-center claim-alert pl-2 pr-2 pt-0 pb-0 ml-3 mr-3 mt-3">
-            <p class="m-0 p-0"><%= "#{@claim.delay_duration} minute delay - You may have a claim" %></p>
+            <p class="m-0 p-0">
+              <% if @claim.delay_duration == "Train cancelled"%>
+                <%= "Your train was cancelled - You may be entitled to a refund." %></p>
+              <% else %>
+                <%= "Your train was delayed by #{@claim.delay_duration} minutes - You may claim a refund!" %></p>
+              <% end %>
           </div>
-          <p class="delay-reason pl-3 pr-3 text-center mt-2 mb-1"><%= "Operator Message: #{@delay_reason.reason}" %></p>
+          <p class="delay-reason pl-3 pr-3 text-center mt-2 mb-1">
+            <% if @delay_reason == nil  %>
+              <%= "Operator Message: Reason for delay unclear" %>
+            <% else %>
+              <%= "Operator Message: #{@delay_reason.reason}" %>
+            <% end %>
+          </p>
         <% end  %>
       </div>
 
@@ -35,59 +47,58 @@
       <div class="row">
         <span class="ml-3"><%= "#{current_user.postcode}" %></span>
       </div>
-      <% if @claim.delay_duration.to_i >= 15 %>
-      <div class="row">
-        <span class="ml-3 mt-2"><strong>Evidence</strong></span><br>
-        <% if current_user.tickets.first.nil? %>
+<!-- logic for when you have claim
+ -->
+      <% if @train_late_or_cancelled %>
+        <div class="row">
+          <span class="ml-3 mt-2"><strong>Evidence</strong></span><br>
+          <% if current_user.tickets.first.nil? %>
           <!-- USER HAS NO TICKETS -->
-          <%= link_to "Add a ticket", new_claim_ticket_path(@claim), class: "btn btn-primary m-2" %>
-        <% else %>
+            <%= link_to "Add a ticket", new_claim_ticket_path(@claim), class: "btn btn-primary m-2" %>
+          <% else %>
           <!-- USER HAS ONE OR MORE TICKETS -->
-          <div class="row justify-content-center">
-            <select class="custom-select custom-select-sm ml-3 mr-3 mt-2 mb-2 col-7" name="tickets" id="claim-ticket-select">
-              <% current_user.tickets.order(created_at: :desc).each do |ticket| %>
-                <option value="<%= ticket.id %>">Ticket No:<%= ticket.ticket_number %>
+            <div class="row justify-content-center">
+              <select class="custom-select custom-select-sm ml-3 mr-3 mt-2 mb-2 col-7" name="tickets" id="claim-ticket-select">
+                <% current_user.tickets.order(created_at: :desc).each do |ticket| %>
+                  <option value="<%= ticket.id %>">Ticket No:<%= ticket.ticket_number %>
                       exp: <%= ticket.expiry_date %>
-                </option>
-              <% end %>
-            </select><br>
-            <div>
-            <%= link_to "Add ticket", new_claim_ticket_path(@claim), class: "btn btn-warning mr-3 mt-2 mb-2 pl-1 pr-1 pt-1 pb-1" %>
+                  </option>
+                <% end %>
+              </select><br>
+              <div>
+              <%= link_to "Add ticket", new_claim_ticket_path(@claim), class: "btn btn-warning mr-3 mt-2 mb-2 pl-1 pr-1 pt-1 pb-1" %>
+              </div>
             </div>
+          <% end %>
+        <div>
+          <% unless current_user.photo_card == nil  %>
+            <%= cl_image_tag(current_user.photo_card.photo, width: 90, height: 60, crop: :fill) %>
+          <% else %>
+            <%= link_to "Add a photo card", new_claim_photo_card_path(@claim), class: "btn btn-primary m-2" %>
+          <% end %>
+        </div>
+        </div>
+        </div>
+        <div class="claim-card w-100 ml-3 mr-3 pl-3 pr-3 pb-3 pt-3 m-3">
+          <div class="row justify-content-between">
+            <input class="mt-3 ml-3" type="checkbox" id="terms" name="terms" value="accepted" checked >
+            <label for="terms" class="tc-text col-11">I accept by submitting this claim I agree to the <%= link_to "Terms and conditions", root_path %> including checking the claim for accuracy and potential fraud.</label>
           </div>
-        <% end %>
+         <%= simple_form_for(@claim) do |f| %>
+            <%= f.input :ticket_id, as: :hidden, input_html: { value: current_user.tickets.last&.id } %>
 
-      </div>
-      <div>
-        <% unless current_user.photo_card == nil  %>
-          <%= cl_image_tag(current_user.photo_card.photo, width: 90, height: 60, crop: :fill) %>
-        <% else %>
-          <%= link_to "Add a photo card", new_claim_photo_card_path(@claim), class: "btn btn-primary m-2" %>
-        <% end %>
-      </div>
-
-    </div>
-    <div class="claim-card w-100 ml-3 mr-3 pl-3 pr-3 pb-3 pt-3 m-3">
-      <div class="row justify-content-between">
-        <input class="mt-3 ml-3" type="checkbox" id="terms" name="terms" value="accepted" checked >
-        <label for="terms" class="tc-text col-11">I accept by submitting this claim I agree to the <%= link_to "Terms and conditions", root_path %> including checking the claim for accuracy and potential fraud.</label>
-      </div>
-        <%= simple_form_for(@claim) do |f| %>
-          <%= f.input :ticket_id, as: :hidden, input_html: { value: current_user.tickets.last&.id } %>
-
-          <%= f.submit "Claim your refund now", disabled: current_user.tickets.empty?, id: "submission", class: "btn btn-warning btn-block", id:"sweet-alert-demo" %>
-        <% end %>
-    </div>
-        <% elsif @claim.delay_duration.to_i.positive? %>
-          <p>Your train was delayed by: <%= @claim.delay_duration %> min. Reason for Delay: <%= @claim.reason_for_delay %>.</p>
-          <p><strong>You are not entitled to compensation as the delay is less than 15 min.</strong></p>
+           <%= f.submit "Claim your refund now", disabled: current_user.tickets.empty?, id: "submission", class: "btn btn-warning btn-block", id:"sweet-alert-demo" %>
+          <% end %>
+        </div>
+      <% elsif @claim.delay_duration.to_i.positive? %>
+        <p>Your train was delayed by: <%= @claim.delay_duration %> min. Reason for Delay: <%= @claim.reason_for_delay %>.</p>
+        <p><strong>You are not entitled to compensation as the delay is less than 15 min.</strong></p>
           <%= link_to "Check another train", root_path %>
-        <% else %>
-          <p><strong>Info: Your train was on time.</strong></p>
+      <% else %>
+        <p><strong>Info: Your train was on time.</strong></p>
           <%= link_to "Check another train", root_path %>
-        <% end %>
-
-
+      <% end %>
+    </div>
   </div>
 </div>
 
