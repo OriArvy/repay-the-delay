@@ -15,9 +15,6 @@ class PagesController < ApplicationController
     api_call_trains
   end
 
-
-
-
   private
 
   def find_weekday(date)
