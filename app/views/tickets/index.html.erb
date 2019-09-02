@@ -1,14 +1,14 @@
 <%= render 'shared/navbar' %>
+<div class="space-bottom-footer">
 <%= render 'shared/user_area_buttons_under_navbar' %>
+  <h2>Your tickets</h2>
 
-<h2>Your tickets</h2>
+  <% current_user.tickets.each do |ticket| %>
 
-<% current_user.tickets.each do |ticket| %>
+    <div class="card-product">
+      <%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %>
+      <p><%= "Ticket expiring on #{ticket.expiry_date}" %></p>
+    </div>
 
-  <div class="card-product">
-    <%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %>
-    <p><%= "Ticket expiring on #{ticket.expiry_date}" %></p>
-  </div>
-
-<% end %>
-
+  <% end %>
+</div>

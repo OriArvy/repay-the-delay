@@ -26,11 +26,10 @@
 <!--     <% unless params[:controller] == 'pages' && params[:action] == 'home' %>
       <%= render 'shared/navbar' %>
     <% end %> -->
-
-
     <%= render 'shared/flashes' %>
     <div style="min-height: calc(100vh - 66px)">
     <%= yield %>
+    <%= render 'shared/footer' %>
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
