@@ -3,7 +3,8 @@
     <%= link_to "Claims", claims_path, class: 'nav-link' %>
   </li>
   <li class="nav-li">
-    <%= link_to "Your Profile", profile_path, class: 'nav-link' %>
+    <%  myname = current_user.first_name + "'s Profile" %>
+    <%= link_to myname, profile_path, class: "nav-link" %>
   </li>
   <li class="nav-li">
     <%= link_to "Tickets", tickets_path, class: 'nav-link' %>

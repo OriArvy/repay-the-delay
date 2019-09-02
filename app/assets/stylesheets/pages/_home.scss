@@ -56,3 +56,21 @@
   border-radius: 15px;
   font-size: 24px;
 }
+
+.space-bottom-footer-home {
+  min-height: calc(100vh - 55px);
+}
+
+.space-bottom-footer {
+  min-height: calc(100vh - 55px - 72px);
+}
+
+.train-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .end-time {
+    margin-right: 8px;
+  }
+}
