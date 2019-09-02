@@ -1,12 +1,12 @@
 <ul id="nav-list">
-  <li class="nav-li">
+  <li class="nav-li yellow-user-btn mb-1">
     <%= link_to "Claims", claims_path, class: 'nav-link' %>
   </li>
-  <li class="nav-li">
+  <li class="nav-li yellow-user-btn mb-1">
     <%  myname = current_user.first_name + "'s Profile" %>
     <%= link_to myname, profile_path, class: "nav-link" %>
   </li>
-  <li class="nav-li">
+  <li class="nav-li yellow-user-btn mb-1">
     <%= link_to "Tickets", tickets_path, class: 'nav-link' %>
   </li>
 </ul>
