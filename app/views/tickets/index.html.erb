@@ -7,7 +7,7 @@
 
   <div class="card-product">
     <%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %>
-    <p><%= "Ticket expiring on #{ticket.expiry_date}" %></p>
+    <p><%= "#{ticket.expiry_date.strftime("Ticket expiring on %m %b %Y")}" %></p>
   </div>
 
 <% end %>
