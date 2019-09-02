@@ -5,6 +5,6 @@
  <%= f.input :expiry_date, label: 'Ticket expiry date', placeholder: "Expiry date", as: :string  %>
  <%= f.input :ticket_type, as: :hidden %>
  <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
- <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: ':camera: Upload a ticket' %>
+ <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a ticket' %>
  <%= f.submit "Add a ticket" %>
 <% end %>
