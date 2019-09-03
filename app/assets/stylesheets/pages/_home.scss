@@ -47,12 +47,88 @@
 
 #my-btn {
   border: none;
-  padding:8px;
-  background-color: #E59C0E;
+  padding: 18px;
+  background-color: #D90368;
   width: 100%;
   margin: 10px 0;
   color: white;
-  font-weight: bold;
-  border-radius: 15px;
-  font-size: 24px;
+  font-family: 'Saira', sans-serif;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+#home-header {
+  background-color: rgb(49, 37, 80);
+  height: 22vh;
+}
+
+#home-header p {
+  color: #fff;
+  padding-left: 15vw;
+  font-family: 'Saira', sans-serif;
+  line-height: 30px;
+  font-size: 48px;
+}
+.home-image {
+  background-image: image-url("logo.svg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+}
+
+.body {
+  padding: 16px 20px;
+  margin-top: 16px;
+
+  p {
+    font-family: 'Saira', sans-serif;
+    font-size: 12px;
+    color: rgb(130, 130, 130);
+    font-weight: 600;
+  }
+}
+
+.input-container {
+  position:relative;
+  margin-bottom: 32px;
+}
+
+.spin {
+  position:absolute;
+  top:-50px;
+  right:5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding-top: 17px;
+  text-align: center;
+  z-index: 999;
+
+}
+// .arrow {
+//   position:absolute;
+//   top:18%;
+//   right:45%;
+//   width: 30px;
+//   height: 30px;
+//   border-radius: 50%;
+//   padding-top: 17px;
+//   text-align: center;
+//   font-size: 20px;
+//   z-index: 999;
+
+// }
+
+.home-input {
+  height: 50px;
+  border: none;
+  width: 100%;
+  border: 2px solid #541388 !important;
+  border-radius: 3px;
+  text-align: left;
+  padding: 0 16px;
+  font-family: 'Saira' !important;
+  font-weight: 600 !important;
 }
