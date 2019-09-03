@@ -7,8 +7,23 @@
   <div class="card-product">
     <div class="card-product-infos">
   <!--     <!%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %> -->
-        <p class="claim-content"><%= "From #{claim.location_from} to #{claim.location_to}"%></p>
-        <p class="claim-content"><%= "At #{claim.departure_time} on the #{claim.departure_date}" %></p>
+        <p class="claim-content">
+          <% Station.all.each do |station| %>
+            <% if claim.location_from == station.code %>
+              <%= "From #{station.name}" %>
+            <% end %>
+          <% end %>
+
+          <% Station.all.each do |station| %>
+            <% if claim.location_to == station.code %>
+              <%= " to #{station.name}" %>
+            <% end %>
+          <% end %>
+        </p>
+
+      <p class="claim-content"><%= "At #{claim.departure_time} on the #{claim.departure_date}" %></p>
+
+
     </div>
   </div>
 <% end %>
