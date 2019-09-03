@@ -1,32 +1,68 @@
 <%= render 'shared/user_area_buttons_under_navbar' %>
 <div class="space-bottom-footer-claims">
-<h2>Your claims</h2>
+  <div class="p-3">
+    <h2 id="claims-headers">Summary</h2>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <p>Your total savings: <%= @sum %> £</p>
+          <p>Claims pending: <%= @claims_pending %> </p>
+          <p>Refunds received: <%= @claims_completed %> </p>
+        </div>
+        <div class="icon_column">
+          <p><i class="fas fa-chart-pie" id="chart_icon"></i></p>
+        </div>
+      </div>
+    <hr>
+    <h2 id="claims-headers">Pending</h2>
+      <% current_user.claims.each do |claim| %>
+        <% if claim.status == "pending" %>
+          <div class="card-product">
+            <div class="card-product-infos">
+              <p id="claims-details">Your Trip from: </p>
+              <p><%= @stations.find_by_code(claim.location_from).name %></p>
+              <p id="claims-details">To:</p>
+              <p><%= @stations.find_by_code(claim.location_to).name %></p>
+              <p id="claims-details"> <%= claim.departure_date.to_date.strftime("%B %d")%>, <%= claim.departure_time.insert(2, ":") %>
+              </p>
+              <p id="claims-details">Delayed by <%= claim.delay_duration %> min</p>
+              <% if claim.reason_for_delay == "" %>
+                <p id="claims-details">Reason for delay: Unclear</p>
+              <% else %>
+                <p id="claims-details">Reason for delay: <%= @cancels.find_by_code(claim.reason_for_delay).reason %></p>
+              <% end %>
 
-<% current_user.claims.each do |claim| %>
-
-  <div class="card-product">
-    <div class="card-product-infos">
-  <!--     <!%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %> -->
-        <p class="claim-content">
-          <% Station.all.each do |station| %>
-            <% if claim.location_from == station.code %>
-              <%= "From #{station.name}" %>
-            <% end %>
-          <% end %>
-
-          <% Station.all.each do |station| %>
-            <% if claim.location_to == station.code %>
-              <%= " to #{station.name}" %>
-            <% end %>
-          <% end %>
-        </p>
-
-      <p class="claim-content"><%= "At #{claim.departure_time} on the #{claim.departure_date}" %></p>
-
-
-    </div>
+            </div>
+            <div class="icon_column">
+              <p><i class="fas fa-hourglass-half" id="clock_icon"></i></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <hr>
+    <h2 id="claims-headers">Refunds</h2>
+      <% current_user.claims.each do |claim| %>
+        <% if claim.status == "completed" %>
+          <div class="card-product">
+            <div class="card-product-infos">
+              <p id="claims-details">Your Trip from: </p>
+              <p><%= @stations.find_by_code(claim.location_from).name %></p>
+              <p id="claims-details">To:</p>
+              <p><%= @stations.find_by_code(claim.location_to).name %></p>
+              <p id="claims-details"> <%= claim.departure_date.to_date.strftime("%B %d")%>, <%= claim.departure_time.insert(2, ":") %>
+              </p>
+              <p id="claims-details">Delayed by <%= claim.delay_duration %> min</p>
+              <% if claim.reason_for_delay.nil?  %>
+                <p id="claims-details">Reason for delay unclear></p>
+              <% else %>
+                <p id="claims-details">Reason for delay: <%= @cancels.find_by_code(claim.reason_for_delay).reason %></p>
+              <% end %>
+            </div>
+            <div class="icon_column">
+              <p><i class="fas fa-coins" id="money_icon"></i></p>
+              <p><%= claim.savings %> £ </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
   </div>
-<% end %>
-
-
-
+</div>

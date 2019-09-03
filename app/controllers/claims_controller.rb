@@ -50,6 +50,27 @@ class ClaimsController < ApplicationController
     redirect_to claims_path
   end
 
+  def index
+    @stations = Station.all
+    @cancels = Cancel.all
+
+    @sum = 0
+    current_user.claims.each do |claim|
+      @sum += claim.savings if !claim.savings.nil?
+    end
+
+    @claims_pending = 0
+    current_user.claims.each do |claim|
+       @claims_pending += 1 if claim.status == "pending"
+    end
+
+    @claims_completed = 0
+    current_user.claims.each do |claim|
+       @claims_completed += 1 if claim.status == "completed"
+    end
+
+  end
+
   private
 
   def api_call_train_detail(train_id)
