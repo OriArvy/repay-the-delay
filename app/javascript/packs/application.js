@@ -6,7 +6,7 @@ import 'flatpickr/dist/flatpickr.css'
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 flatpickr("#ticket_expiry_date", { defaultDate: "today", altInput: true, altFormat: "F j, Y", dateFormat: "Y-m-d", });
-flatpickr("#flat-time", { altInput: true, time_24hr: true, enableTime: true, altFormat: "F j, Y", dateFormat: "Y-m-dTH:i", defaultDate: "today", defaultHour: 3, defaultMinute: 0});
+flatpickr("#flat-time", { altInput: true, time_24hr: true, enableTime: true, altFormat: "F j, Y H:i", dateFormat: "Y-m-dTH:i", defaultDate: "today", defaultHour: 12, defaultMinute: 0, placeholder: "xxx"});
 
 
 previewImageOnFileSelect()
@@ -49,3 +49,37 @@ initSweetalert('#my-btn', {
   customClass: 'sweet-gif',
   width: '100px'
 });
+
+// home page switch button
+const fromStation = document.getElementById('from_station');
+const toStation = document.getElementById('to_station');
+const switchStation = document.getElementById('switch');
+switchStation.addEventListener('click', () => {
+    const fromVal = fromStation.value
+    const toVal = toStation.value
+    const fromText = fromStation.parentNode.querySelector('.select2-selection__rendered').innerText
+    const toText = toStation.parentNode.querySelector('.select2-selection__rendered').innerText
+    fromStation.value = toVal
+    toStation.value = fromVal
+    fromStation.parentNode.querySelector('.select2-selection__rendered').innerText = toText
+    toStation.parentNode.querySelector('.select2-selection__rendered').innerText = fromText
+  }
+)
+
+const fromStation1 = document.getElementById('from_station');
+const toStation1 = document.getElementById('to_station');
+const switchStation1 = document.getElementById('switch');
+switchStation1.addEventListener('touchstart click', () => {
+    const fromVal1 = fromStation1.value
+    const toVal1 = toStation1.value
+    const fromText1 = fromStation1.parentNode.querySelector('.select2-selection__rendered').innerText
+    const toText1 = toStation1.parentNode.querySelector('.select2-selection__rendered').innerText
+    fromStation1.value = toVal1
+    toStation1.value = fromVal1
+    fromStation1.parentNode.querySelector('.select2-selection__rendered').innerText = toText1
+    toStation1.parentNode.querySelector('.select2-selection__rendered').innerText = fromText1
+  }
+)
+
+
+
