@@ -1,21 +1,4 @@
 <%= render 'shared/user_area_buttons_under_navbar' %>
 
-<div class="profile-form">
-<%= simple_form_for(current_user, url: user_registration_path, method: :patch) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :title, collection: ["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"] %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :phone_number %>
-    <%= f.input :address %>
-    <%= f.input :postcode %>
-    <%= f.input :city %>
-    <%= f.input :account_number %>
-    <%= f.input :sort_code %>
-    <div class="form-actions">
-      <%= f.button :submit, "Update", :class => "btn-warning btn-lg" %>
-    </div>
-  </div>
-<% end %>
-</div>
+<%= link_to 'Edit Profile', edit_user_registration_path %>
 

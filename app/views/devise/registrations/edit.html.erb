@@ -1,3 +1,4 @@
+<%= render 'shared/user_area_buttons_under_navbar' %>
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -10,7 +11,15 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+    <%= f.input :title,
+                required: true,
+                input_html: { autocomplete: "title" } %>
+    <%= f.input :first_name,
+                required: true,
+                input_html: { autocomplete: "First Name" } %>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "Last Name" } %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -22,6 +31,24 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "phone number" } %>
+    <%= f.input :address,
+                required: true,
+                input_html: { autocomplete: "address" } %>
+    <%= f.input :city,
+                required: true,
+                input_html: { autocomplete: "city" } %>
+    <%= f.input :postcode,
+                required: true,
+                input_html: { autocomplete: "postcode" } %>
+    <%= f.input :sort_code,
+                required: true,
+                input_html: { autocomplete: "sort_code" } %>
+    <%= f.input :account_number,
+                required: true,
+                input_html: { autocomplete: "account_number" } %>
   </div>
 
   <div class="form-actions">
