@@ -25,7 +25,7 @@
               <p id="claims-details"> <%= claim.departure_date.to_date.strftime("%B %d")%>, <%= claim.departure_time.insert(2, ":") %>
               </p>
               <p id="claims-details">Delayed by <%= claim.delay_duration %> min</p>
-              <% if claim.reason_for_delay == "" %>
+              <% if claim.reason_for_delay == "" or claim.reason_for_delay == nil %>
                 <p id="claims-details">Reason for delay: Unclear</p>
               <% else %>
                 <p id="claims-details">Reason for delay: <%= @cancels.find_by_code(claim.reason_for_delay).reason %></p>
@@ -51,7 +51,7 @@
               <p id="claims-details"> <%= claim.departure_date.to_date.strftime("%B %d")%>, <%= claim.departure_time.insert(2, ":") %>
               </p>
               <p id="claims-details">Delayed by <%= claim.delay_duration %> min</p>
-              <% if claim.reason_for_delay.nil?  %>
+               <% if claim.reason_for_delay == "" or claim.reason_for_delay == nil %>
                 <p id="claims-details">Reason for delay unclear></p>
               <% else %>
                 <p id="claims-details">Reason for delay: <%= @cancels.find_by_code(claim.reason_for_delay).reason %></p>

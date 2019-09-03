@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_09_03_145939) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,9 +34,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_145939) do
     t.datetime "updated_at", null: false
     t.string "departure_date"
     t.string "departure_time"
-    t.string "status"
-    t.integer "saving"
-    t.integer "savings"
+    t.string "status", default: "pending"
+    t.float "savings"
     t.index ["ticket_id"], name: "index_claims_on_ticket_id"
     t.index ["user_id"], name: "index_claims_on_user_id"
   end
