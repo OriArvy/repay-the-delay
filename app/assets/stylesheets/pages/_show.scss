@@ -13,8 +13,7 @@
   width: 100%;
   box-shadow: 3px 3px 8px rgba(55,55,55,0.3);
   font-size: 14px;
-  // font-weight: bold;
-
+  font-weight: bold;
 }
 
 .claim-content {
@@ -29,6 +28,7 @@
 
 .delay-reason {
   font-size: 12px;
+  opacity: 0.3;
 }
 
 .text-title {
@@ -49,4 +49,5 @@
   color: #2E294E;
   font-weight: bold;
 }
+
 
