@@ -7,7 +7,7 @@
 }
 
 .claim-alert {
-  background-color: rgba(238,70,70,1);
+  background-color: #D90368;
   color: white;
   border-radius: 4px;
   width: 100%;
@@ -17,6 +17,10 @@
 
 }
 
+.claim-content {
+  margin: 0;
+  padding: 0;
+}
 .tc-text {
   font-size: 13px;
   margin-bottom: 0px;
@@ -24,6 +28,25 @@
 }
 
 .delay-reason {
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.text-title {
+  color: rgb(130, 130, 130);
+  font-weight: bold;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 12px;
+}
+
+.station-text {
+  color: #D90368;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-details-text {
+  color: #2E294E;
   font-weight: bold;
 }
+
