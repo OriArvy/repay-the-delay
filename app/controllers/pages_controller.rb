@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def search
+    @stations = Station.all
     api_call_trains
   end
 
@@ -60,4 +61,6 @@ class PagesController < ApplicationController
       @response_trains = JSON.parse(@response.body)
     end
   end
+
+
 end
