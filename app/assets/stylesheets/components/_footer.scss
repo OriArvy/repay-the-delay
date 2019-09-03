@@ -1,0 +1,59 @@
+.footer {
+  background-color: #62555F;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: rgba(0,0,0,0.3);
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  height: 55px;
+  }
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 0px 18px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-item {
+    white-space: nowrap;
+}
+
+.footer li {
+  list-style: none;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.space-bottom-footer-home {
+  min-height: calc(100vh - 55px);
+}
+
+.space-bottom-footer {
+  min-height: calc(100vh - 55px - 72px);
+}
+
+.space-bottom-footer-claims {
+  min-height: calc(100vh - 182px);
+}
+
+.train-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .end-time {
+    margin-right: 8px;
+  }
+}

@@ -1,12 +1,25 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  justify-content: space-around;
+  background-color: #62555F;
+  color: #fff;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#nav-heading {
+  text-align: center;
+  padding-top: 15px;
+  color: #fff;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#nav-heading {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
 }
+
+#nav-list {
+  margin-top: -2px;
+}
+
+
+
+

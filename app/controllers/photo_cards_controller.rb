@@ -1,14 +1,16 @@
 class PhotoCardsController < ApplicationController
   def new
+    @claim = Claim.find(params[:claim_id])
     @photo_card = PhotoCard.new
   end
 
   def create
+    @claim = Claim.find(params[:claim_id])
     @photo_card = PhotoCard.new(photocard_params)
     @user = current_user
     @photo_card.user = @user
     if @photo_card.save
-      redirect_to root_path
+      redirect_to claim_path(@claim)
     else
       render :new
     end

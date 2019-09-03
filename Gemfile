@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'sweetalert2'
 gem "watir", "~> 6.16"
 gem "select2-rails"
 gem 'bootsnap', require: false

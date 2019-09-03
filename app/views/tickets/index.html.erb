@@ -1,0 +1,13 @@
+<%= render 'shared/user_area_buttons_under_navbar' %>
+
+<h2>Your tickets</h2>
+
+<% current_user.tickets.each do |ticket| %>
+
+  <div id="search-card">
+    <%= cl_image_tag ticket.photo, height: 80, width: 150, crop: :fill %>
+    <p><%= "Ticket expiring on #{ticket.expiry_date.strftime("%a, %e %b %Y")}" %></p>
+  </div>
+
+<% end %>
+

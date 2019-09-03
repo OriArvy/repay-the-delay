@@ -1,0 +1,31 @@
+#search-card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #62555F;
+  color: #62555F;
+}
+#search-card:hover {
+  width: 100%;
+  background-color: #62555F;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #62555F;
+  color: #fff;
+}
+
+.background-grey {
+  background-image: url("front-page.jpg");
+  background-color: #cccccc;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+  // -webkit-filter: grayscale(100%);
+  // filter: grayscale(100%);
+  // opacity: 1;
+}
+
+

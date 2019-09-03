@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
+
+h2 {
+  text-align: center;
+  color: rgb(40, 40, 40);
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.profile-form {
+  width: 60%;
+  margin: 0 auto;
+}

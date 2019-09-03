@@ -1,0 +1,17 @@
+<%= render 'shared/user_area_buttons_under_navbar' %>
+<div class="space-bottom-footer-claims">
+<h2>Your claims</h2>
+
+<% current_user.claims.each do |claim| %>
+
+  <div class="card-product">
+    <div class="card-product-infos">
+  <!--     <!%= cl_image_tag ticket.photo, height: 100, width: 200, crop: :fill %> -->
+        <p class="claim-content"><%= "From #{claim.location_from} to #{claim.location_to}"%></p>
+        <p class="claim-content"><%= "At #{claim.departure_time} on the #{claim.departure_date}" %></p>
+    </div>
+  </div>
+<% end %>
+
+
+

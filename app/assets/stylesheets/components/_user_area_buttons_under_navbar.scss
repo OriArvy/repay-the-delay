@@ -1,0 +1,22 @@
+#nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #62555F;
+  padding: 0;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  opacity: 0.95;
+  text-decoration: none;
+  color: rgb(240, 240, 240);
+}
+
+.nav-li {
+  text-align: none;
+}
+
