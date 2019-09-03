@@ -7,7 +7,7 @@
           <div><%= "From #{claim.location_from}" %>
           <i class="fas fa-long-arrow-alt-right"></i><%= " #{claim.location_to}" %></div>
           <div><%= "At #{claim.departure_time} on the #{claim.departure_date}" %></div>
-          <div><%= cl_image_tag claim.ticket.photo, height: 80, width: 120, crop: :fill %></div>
+          <!-- <div><!%= cl_image_tag claim.ticket.photo, height: 80, width: 120, crop: :fill %></div> -->
           <div class="row justify-content-between">
             <div>
               <div class="btn btn-primary mr-3"><i class="fas fa-play"></i></div>

@@ -1,0 +1,21 @@
+.select2-container--default .select2-selection--single {
+  height: 50px !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 65px 0 16px !important;
+  height: 50px !important;
+  border: 2px solid #541388 !important;
+  border-radius: 3px !important;
+  font-family: 'Saira' !important;
+  font-weight: 600 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  top: 13px !important;
+  right: 16px !important;
+}
