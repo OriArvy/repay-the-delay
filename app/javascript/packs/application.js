@@ -42,13 +42,6 @@ initSweetalert('#sweet-alert-demo', {
   buttons: false
 });
 
-// homage page initiate search
-initSweetalert('#my-btn', {
-  icon: "https://media.giphy.com/media/11l5hkwH1zcsBG/giphy.gif",
-  buttons: false,
-  customClass: 'sweet-gif',
-  width: '100px'
-});
 
 // home page switch button
 const fromStation = document.getElementById('from_station');
@@ -80,6 +73,21 @@ switchStation1.addEventListener('touchstart click', () => {
     toStation1.parentNode.querySelector('.select2-selection__rendered').innerText = fromText1
   }
 )
+
+
+// // homage page initiate search
+
+let repayGif = document.querySelector(".transition").style.visibility = 'hidden';
+const homeBtn = document.getElementById("my-btn");
+
+homeBtn.addEventListener('click', () => {
+  let repayGif = document.querySelector(".transition").style.visibility = 'visible';
+})
+
+homeBtn.addEventListener('touchstart click', () => {
+  let repayGif = document.querySelector(".transition").style.visibility = 'visible';
+})
+
 
 
 
