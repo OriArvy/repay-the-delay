@@ -14,7 +14,7 @@
       </div>
     <hr>
     <h2 id="claims-headers">Pending</h2>
-      <% current_user.claims.each do |claim| %>
+      <% @claims.each do |claim| %>
         <% if claim.status == "pending" %>
           <div class="card-product">
             <div class="card-product-infos">
@@ -40,7 +40,7 @@
       <% end %>
     <hr>
     <h2 id="claims-headers">Refunds</h2>
-      <% current_user.claims.each do |claim| %>
+      <% @claims.each do |claim| %>
         <% if claim.status == "completed" %>
           <div class="card-product">
             <div class="card-product-infos">

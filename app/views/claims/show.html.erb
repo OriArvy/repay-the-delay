@@ -80,13 +80,13 @@
         </div>
         </div>
           <div class="row">
-            <input class="mt-1" type="checkbox" id="terms" name="terms" value="accepted" checked >
+            <input class="mt-1" type="checkbox" id="terms" name="terms" value="accepted" >
             <label for="terms" class="tc-text col-10">I agree to the <%= link_to "Terms and conditions", root_path %> including checking the claim for accuracy and potential fraud.</label>
           </div>
          <%= simple_form_for(@claim) do |f| %>
             <%= f.input :ticket_id, as: :hidden, input_html: { value: current_user.tickets.last&.id } %>
 
-           <%= f.submit "Claim your refund now", disabled: current_user.tickets.empty?,  class: "btn btn-warning btn-block submit-claim-button", id:"sweet-alert-demo" %>
+           <%= f.submit "Claim your refund now", disabled: true,  class: "btn btn-warning btn-block submit-claim-button", id:"sweet-alert-demo" %>
           <% end %>
       <% elsif @claim.delay_duration.to_i.positive? %>
         <p>Your train was delayed by: <%= @claim.delay_duration %> min. Reason for Delay: <%= @claim.reason_for_delay %>.</p>

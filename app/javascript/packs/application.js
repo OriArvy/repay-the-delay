@@ -37,7 +37,7 @@ if (terms) {
 // initiating submission on claim show page
 initSweetalert('#sweet-alert-demo', {
   title: "Claim Submitted",
-  text: "We will keep you updated via email",
+  text: "We will keep you updated via email.",
   icon: "success",
   buttons: false
 });
