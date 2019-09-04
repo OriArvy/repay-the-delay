@@ -78,7 +78,7 @@
         </div>
           <div class="row">
             <input class="mt-4 ml-2" type="checkbox" id="terms" name="terms" value="accepted" >
-            <label for="terms" class="tc-text col-11">I agree to the <%= link_to "Terms and conditions", root_path %> including checking the claim for accuracy and potential fraud.</label>
+            <label for="terms" class="tc-text col-11">I agree to the <%= link_to "Terms and conditions", root_path %> including checking the submitted details for accuracy and potential fraud.</label>
           </div>
          <%= simple_form_for(@claim) do |f| %>
             <%= f.input :ticket_id, as: :hidden, input_html: { value: current_user.tickets.last&.id } %>
@@ -97,49 +97,6 @@
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--         <label for="terms">I accept that by submitting this claim I agree to the <%= link_to "Terms and conditions", root_path %> including checking the submitted details for accuracy and potential fraud. I confirm that I am not a robot.</label> -->
-
-<!--
-    </div>
-    <div class="claim-card w-100 ml-3 mr-3 p-3 mt-3">
-          <div class="row">
-            <input type="checkbox" id="terms" name="terms" value="accepted" checked >
-            <label for="terms" class="tc-text">You agree to the <!%= link_to "Terms and conditions", root_path %> including checking details for accuracy.</label>
-          </div>
-          <div class="row">
-            <div class="ml-3 mr-3 btn btn-warning btn-block">Submit claim</div>
-          </div>
-    </div>
-  </div>
-
- -->
 
 
 
