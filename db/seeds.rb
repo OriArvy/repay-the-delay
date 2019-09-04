@@ -61,6 +61,194 @@ ticket_5 = Ticket.new(
   ticket_5.remote_photo_url = url5
   ticket_5.save!
 
+
+claim_1 = Claim.new(
+  train_id: "12345",
+  location_from: "GLD",
+  location_to: "WAT",
+  delay_duration: "16",
+  reason_for_delay: "763",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "25/08/2019",
+  departure_time: "1830",
+  status: "pending",
+  savings: 2.50
+)
+claim_1.save!
+
+claim_2 = Claim.new(
+  train_id: "22345",
+  location_from: "WAT",
+  location_to: "GLD",
+  delay_duration: "45",
+  reason_for_delay: "763",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "28/08/2019",
+  departure_time: "0830",
+  status: "completed",
+  savings: 5.00
+)
+claim_2.save!
+
+claim_3 = Claim.new(
+  train_id: "32345",
+  location_from: "WAT",
+  location_to: "GLD",
+  delay_duration: "16",
+  reason_for_delay: "338",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "22/08/2019",
+  departure_time: "1830",
+  status: "completed",
+  savings: 2.50
+)
+claim_3.save!
+
+claim_4 = Claim.new(
+  train_id: "42345",
+  location_from: "GLD",
+  location_to: "WAT",
+  delay_duration: "85",
+  reason_for_delay: "711",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "29/08/2019",
+  departure_time: "1730",
+  status: "completed",
+  savings: 10.50
+)
+claim_4.save!
+
+claim_5 = Claim.new(
+  train_id: "52345",
+  location_from: "GLD",
+  location_to: "WAT",
+  delay_duration: "80",
+  reason_for_delay: "263",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "05/08/2019",
+  departure_time: "0930",
+  status: "pending",
+  savings: 10.50
+)
+claim_5.save!
+
+claim_6 = Claim.new(
+  train_id: "62345",
+  location_from: "WAT",
+  location_to: "GLD",
+  delay_duration: "16",
+  reason_for_delay: "111",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "01/08/2019",
+  departure_time: "1830",
+  status: "completed",
+  savings: 2.50
+)
+claim_6.save!
+
+claim_7 = Claim.new(
+  train_id: "72345",
+  location_from: "WAT",
+  location_to: "GLD",
+  delay_duration: "16",
+  reason_for_delay: "733",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "22/07/2019",
+  departure_time: "1830",
+  status: "completed",
+  savings: 2.50
+)
+claim_7.save!
+
+claim_8 = Claim.new(
+  train_id: "82345",
+  location_from: "GLD",
+  location_to: "WAT",
+  delay_duration: "16",
+  reason_for_delay: "700",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "07/08/2019",
+  departure_time: "0830",
+  status: "completed",
+  savings: 2.50
+)
+claim_8.save!
+
+claim_9 = Claim.new(
+  train_id: "92345",
+  location_from: "WAT",
+  location_to: "GLD",
+  delay_duration: "16",
+  reason_for_delay: "661",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "22/06/2019",
+  departure_time: "1230",
+  status: "completed",
+  savings: 2.50
+)
+claim_9.save!
+
+claim_10 = Claim.new(
+  train_id: "10345",
+  location_from: "GLD",
+  location_to: "WAT",
+  delay_duration: "25",
+  reason_for_delay: "777",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "22/07/2019",
+  departure_time: "1650",
+  status: "completed",
+  savings: 2.50
+)
+claim_10.save!
+
+claim_11 = Claim.new(
+  train_id: "11345",
+  location_from: "WAT",
+  location_to: "GLD",
+  delay_duration: "27",
+  reason_for_delay: "785",
+  ticket_id: ticket_2.id,
+  user_id: user_2.id,
+  created_at: nil,
+  updated_at: nil,
+  departure_date: "21/07/2019",
+  departure_time: "1350",
+  status: "completed",
+  savings: 2.50
+)
+claim_11.save!
+
 Station.create!(name: "Abbey Wood [ABW]", code: "ABW")
 Station.create!(name: "Aber [ABE]", code: "ABE")
 Station.create!(name: "Abercynon [ACY]", code: "ACY")
