@@ -1,8 +1,8 @@
-<div class="bottom-show-footer-home">
+<div class="bottom-show-footer-home p-3">
 <%= simple_form_for [@claim, @photo_card] do |f| %>
-  <%= f.input :card_number, label: 'Please provide card number', placeholder: "Card number" %>
-  <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-  <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo card' %>
-  <%= f.submit "Add a card" %>
+  <%= f.input :card_number, label: 'Please provide card number', placeholder: "Card number", input_html: { id: "ticket_ticket" }%>
+  <%= image_tag "", width: 300, class: "hidden w-100", id: "photo-preview" %>
+  <%= f.input :photo, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo w-100 text-center'}, label: '📷 Upload a photo card' %>
+  <%= f.submit "Add a photo card", class: "button-font-size" %>
 <% end %>
 </div>
