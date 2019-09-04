@@ -5,7 +5,8 @@
   background-color: #2E294E;
   padding: 0;
   font-family: 'Saira', sans-serif;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .nav-link {
@@ -22,3 +23,14 @@
   text-align: none;
 }
 
+#active-selection {
+  color: #BDBCB6;
+}
+
+
+.nav-link:active{ /*on click*/
+    border:none;
+    -ms-transform: translate(3px,3px);
+    -webkit-transform: translate(3px,3px);
+    transform: translate(3px,3px);/*move LowerRight*/
+}
