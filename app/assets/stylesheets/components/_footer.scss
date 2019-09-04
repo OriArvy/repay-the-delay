@@ -1,13 +1,16 @@
 .footer {
-  background-color: #62555F;
+  background-color: #2E294E;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: rgba(0,0,0,0.3);
+  color: #FFF;
   // position: fixed;
   // left: 0;
   // bottom: 0;
   height: 55px;
+  font-family: 'Saira', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
   }
 .footer-links {
   display: flex;

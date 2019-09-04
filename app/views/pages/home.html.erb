@@ -14,7 +14,10 @@
               <% if current_user.home_station.nil?  %>
                 <option value="">From...</option>
               <% else %>
-                <option value="<%= current_user.home_station %>">Home (<%= current_user.home_station %>)</option>
+                <option value="<%= current_user.home_station %>">
+                  <%= "Home (#{Station.all.find_by_code(current_user.home_station).name[0..-7]})" %>
+
+                </option>
               <% end %>
             <% end %>
 
@@ -32,7 +35,8 @@
               <% if current_user.work_station.nil?  %>
                 <option value="">To...</option>
               <% else %>
-                <option value="<%= current_user.work_station %>">Work (<%= current_user.work_station %>)</option>
+                <option value="<%= current_user.work_station %>">
+                  <%= "Work (#{Station.all.find_by_code(current_user.work_station).name[0..-7]})" %></option>
               <% end %>
             <% end %>
              <% @stations.each do |station| %>

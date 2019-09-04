@@ -4,13 +4,15 @@
       <li class="footer-item">
         <%  if user_signed_in? %>
           <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "footer-link" %>
+          <%= link_to "User Area",claims_path, class: "footer-link" %>
         <%  else %>
           <%= link_to "Sign in",new_user_session_path, class: "footer-link"  %>
+          <li class="footer-item">
+               <a href="#" class="footer-item">FAQ</a>
+          </li>
         <%  end %>
       </li>
-      <li class="footer-item">
-           <a href="#" class="footer-item">FAQ</a>
-    </li>
+
     <li class="footer-item">
             <a href="#" class="footer-item">Terms of use</a>
     </li>
