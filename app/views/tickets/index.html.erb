@@ -1,4 +1,14 @@
-<%= render 'shared/user_area_buttons_under_navbar' %>
+<ul id="nav-list">
+  <li class="nav-li mb-1">
+    <%= link_to "Claims", claims_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-li mb-1">
+    <%= link_to "Your details", edit_user_registration_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-li mb-1">
+    <%= link_to "Evidence", tickets_path, class: 'nav-link', id: "active-selection" %>
+  </li>
+</ul>
 
 <h2>Your tickets</h2>
 
