@@ -3,7 +3,10 @@ import swal from 'sweetalert';
 const initSweetalert = (selector, options = {}) => {
   const swalButton = document.querySelector(selector);
   if (swalButton) { // protect other pages
-    swalButton.addEventListener('click' || 'touchstart', () => {
+    swalButton.addEventListener('click', () => {
+      swal(options);
+    });
+    swalButton.addEventListener('touchstart click', () => {
       swal(options);
     });
     swalButton.addEventListener('submit', () => {
@@ -11,5 +14,9 @@ const initSweetalert = (selector, options = {}) => {
     });
   }
 }
+
+
+
+
 
 export { initSweetalert };

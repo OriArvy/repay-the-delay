@@ -6,10 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Station.destroy_all
+Claim.destroy_all
 Ticket.destroy_all
-User.destroy_all
 Cancel.destroy_all
+Station.destroy_all
+User.destroy_all
 
 user_1 = User.create!(
   admin: true, title: "Mr", first_name: "Admin", last_name: "Account", email: "admin@repay.com", password: "111111", phone_number: "admin", address: "1 Admin Road", postcode: "SW1A 1AA", city: "London", sort_code: "444444", account_number: "44444444")
@@ -56,7 +57,7 @@ ticket_5 = Ticket.new(
   price: 420,
   expiry_date: 20200819,
   user: user_5)
-  url5 = "http://www.bluemaize.net/im/arts-crafts-sewing/train-tickets-8.jpg"
+  url5 = "http://i2.wp.com/eveningharold.com/wp-content/uploads/2015/02/train-ticket.png"
   ticket_5.remote_photo_url = url5
   ticket_5.save!
 
