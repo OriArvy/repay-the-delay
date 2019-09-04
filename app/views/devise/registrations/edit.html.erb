@@ -17,51 +17,51 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true %>
+      <%= f.input :email, required: true, autofocus: true, input_html: {id: "ticket_ticket"} %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
       <%= f.input :title,
                   required: true,
-                  input_html: { autocomplete: "title" } %>
+                  input_html: { autocomplete: "title", id: "ticket_ticket" } %>
       <%= f.input :first_name,
                   required: true,
-                  input_html: { autocomplete: "First Name" } %>
+                  input_html: { autocomplete: "First Name", id: "ticket_ticket" } %>
       <%= f.input :last_name,
                   required: true,
-                  input_html: { autocomplete: "Last Name" } %>
+                  input_html: { autocomplete: "Last Name", id: "ticket_ticket" } %>
       <%= f.input :phone_number,
                   required: true,
-                  input_html: { autocomplete: "phone number" } %>
+                  input_html: { autocomplete: "phone number", id: "ticket_ticket" } %>
       <%= f.input :address,
                   required: true,
-                  input_html: { autocomplete: "address" } %>
+                  input_html: { autocomplete: "address", id: "ticket_ticket" } %>
       <%= f.input :city,
                   required: true,
-                  input_html: { autocomplete: "city" } %>
+                  input_html: { autocomplete: "city", id: "ticket_ticket" } %>
       <%= f.input :postcode,
                   required: true,
-                  input_html: { autocomplete: "postcode" } %>
+                  input_html: { autocomplete: "postcode", id: "ticket_ticket" } %>
       <%= f.input :sort_code,
                   required: true,
-                  input_html: { autocomplete: "sort_code" } %>
+                  input_html: { autocomplete: "sort_code", id: "ticket_ticket" } %>
       <%= f.input :account_number,
                   required: true,
-                  input_html: { autocomplete: "account_number" } %>
+                  input_html: { autocomplete: "account_number", id: "ticket_ticket" } %>
       <%= f.input :home_station %>
       <%= f.input :work_station %>
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password", id: "ticket_ticket" } %>
       <%= f.input :password_confirmation,
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password", id: "ticket_ticket" } %>
       <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
-                  input_html: { autocomplete: "current-password" } %>
+                  input_html: { autocomplete: "current-password", id: "ticket_ticket" } %>
     </div>
 
     <div class="form-actions">
