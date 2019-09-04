@@ -10,15 +10,40 @@
   </li>
 </ul>
 <div class="user-nav-pad"></div>
-
-<h2>Your tickets</h2>
-
-<% current_user.tickets.each do |ticket| %>
-
-  <div id="search-card">
-    <%= cl_image_tag ticket.photo, height: 80, width: 150, crop: :fill %>
-    <p><%= "Ticket expiring on #{ticket.expiry_date.strftime("%a, %e %b %Y")}" %></p>
+<div class="p-3">
+  <h2 id="claims-headers">Your tickets</h2>
+<div id="carouselExampleControls" class="carousel slide pt-3" data-ride="carousel">
+  <div class="carousel-inner">
+      <% current_user.tickets.each_with_index do |ticket, index| %>
+    <div class="carousel-item <%= 'active' if index == 0 %>">
+      <%= cl_image_tag ticket.photo, height: 150, width: 250, crop: :fill, class: "d-block pb-2 w-75" %>
+      <p><strong><%= "Ticket expiring on #{ticket.expiry_date.strftime("%a, %e %b %Y")}" %></strong></p>
+    </div>
+      <% end %>
   </div>
+  <a class="carousel-control-prev mb-3" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon mb-3" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next w-75 mb-3" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon w-75 mb-3" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<hr>
+  <% if current_user.photo_card.nil? %>
+  <h2 id="claims-headers" class=pb-3>Your photo card</h2>
+  <% else %>
+    <h2 id="claims-headers" class="pb-3">Your photo card</h2>
+    <div class="card-product">
+      <div class="card-product-infos">
+        <div id="search-card" class="mb-3">
+          <%= cl_image_tag current_user.photo_card.photo, height: 150, width: 250, crop: :fill %>
+          <p><strong><%= "Photo card number: #{current_user.photo_card.card_number}" %></strong></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
-<% end %>
 
+</div>
