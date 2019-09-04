@@ -23,9 +23,9 @@
           </div>
           <p class="delay-reason text-center mt-2 mb-1">
             <% if @delay_reason == nil  %>
-              <%= "Operator Message: Reason for delay unclear" %>
+              <%= " Reason for delay unclear" %>
             <% else %>
-              <%= "Operator Message: #{@delay_reason.reason}" %>
+              <%= "#{@delay_reason.reason}" %>
             <% end %>
           </p>
         <% end  %>
