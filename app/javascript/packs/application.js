@@ -12,6 +12,10 @@ flatpickr("#flat-time", { altInput: true, time_24hr: true, enableTime: true, alt
 previewImageOnFileSelect()
 initSelect2();
 
+$('.carousel').carousel({
+  interval: false
+})
+
 
 // ticket selector on claim show page
 const ticket = document.querySelector('#claim_ticket_id')
@@ -47,6 +51,7 @@ initSweetalert('#sweet-alert-demo', {
 const fromStation = document.getElementById('from_station');
 const toStation = document.getElementById('to_station');
 const switchStation = document.getElementById('switch');
+
 switchStation.addEventListener('click', () => {
     const fromVal = fromStation.value
     const toVal = toStation.value
