@@ -23,7 +23,7 @@ if (ticket) {
 
 // submission button on claim show page
 const terms = document.querySelector('#terms')
-const submission = document.querySelector('#submission')
+const submission = document.querySelector('#sweet-alert-demo')
 if (terms) {
   document.querySelector('#terms').addEventListener('change', (e) => {
     if (submission.disabled) {
@@ -37,7 +37,7 @@ if (terms) {
 // initiating submission on claim show page
 initSweetalert('#sweet-alert-demo', {
   title: "Claim Submitted",
-  text: "We will keep you updated via email",
+  text: "We will keep you updated via email.",
   icon: "success",
   buttons: false
 });

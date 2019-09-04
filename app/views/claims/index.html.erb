@@ -1,4 +1,15 @@
-<%= render 'shared/user_area_buttons_under_navbar' %>
+<ul id="nav-list">
+  <li class="nav-li mb-1">
+    <%= link_to "Claims", claims_path, class: 'nav-link', id: "active-selection" %>
+  </li>
+  <li class="nav-li mb-1">
+    <%= link_to "Your details", edit_user_registration_path, class: 'nav-link' %>
+  </li>
+  <li class="nav-li mb-1">
+    <%= link_to "Evidence", tickets_path, class: 'nav-link' %>
+  </li>
+</ul>
+
 <div class="space-bottom-footer-claims">
   <div class="p-3">
     <h2 id="claims-headers">Summary</h2>
@@ -14,7 +25,7 @@
       </div>
     <hr>
     <h2 id="claims-headers">Pending</h2>
-      <% current_user.claims.each do |claim| %>
+      <% @claims.each do |claim| %>
         <% if claim.status == "pending" %>
           <div class="card-product">
             <div class="card-product-infos">
@@ -25,7 +36,7 @@
               <p id="claims-details"> <%= claim.departure_date.to_date.strftime("%B %d")%>, <%= claim.departure_time.insert(2, ":") %>
               </p>
               <p id="claims-details">Delayed by <%= claim.delay_duration %> min</p>
-              <% if claim.reason_for_delay == "" or claim.reason_for_delay == nil %>
+              <% if claim.reason_for_delay == "" || claim.reason_for_delay == nil || @cancels.find_by_code(claim.reason_for_delay) == nil  %>
                 <p id="claims-details">Reason for delay: Unclear</p>
               <% else %>
                 <p id="claims-details">Reason for delay: <%= @cancels.find_by_code(claim.reason_for_delay).reason %></p>
@@ -40,7 +51,7 @@
       <% end %>
     <hr>
     <h2 id="claims-headers">Refunds</h2>
-      <% current_user.claims.each do |claim| %>
+      <% @claims.each do |claim| %>
         <% if claim.status == "completed" %>
           <div class="card-product">
             <div class="card-product-infos">
@@ -51,7 +62,7 @@
               <p id="claims-details"> <%= claim.departure_date.to_date.strftime("%B %d")%>, <%= claim.departure_time.insert(2, ":") %>
               </p>
               <p id="claims-details">Delayed by <%= claim.delay_duration %> min</p>
-               <% if claim.reason_for_delay == "" or claim.reason_for_delay == nil %>
+               <% if claim.reason_for_delay == "" || claim.reason_for_delay == nil || @cancels.find_by_code(claim.reason_for_delay) == nil  %>
                 <p id="claims-details">Reason for delay unclear></p>
               <% else %>
                 <p id="claims-details">Reason for delay: <%= @cancels.find_by_code(claim.reason_for_delay).reason %></p>
