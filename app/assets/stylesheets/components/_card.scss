@@ -1,23 +1,27 @@
 
 #claims-headers {
-    font-size: 26px;
-    margin: 0;
-    color: rgb(49,37,80);
-    font-family: 'Saira', sans-serif;
-    text-align: left;
-  }
+  font-size: 26px;
+  margin: 0;
+  color: rgb(49,37,80);
+  font-family: 'Saira', sans-serif;
+  text-align: left;
+  padding-left: 0px;
+  font-weight: bold;
+}
+
+
 
 .card-product {
   display: flex;
   align-items: top;
   justify-content: space-between;
   margin: 0;
-  margin-top: 20px;
+  margin-bottom: 15px;
   font-family: 'Saira', sans-serif;
   .card-product-infos {
     p {
       line-height: 1.4;
-      margin-bottom: 1px;
+      margin-bottom: 5px;
       padding-left: 0px;
       color: rgb(49,37,80);
       text-align: left;
@@ -29,11 +33,12 @@
 .icon_column {
   margin-left: 10px;
   margin-top: 0px;
+  min-width: 50px;
    p {
-      margin-bottom: 1px;
+      margin-bottom: 2px;
       padding-left: 0px;
       color: rgb(49,37,80);
-      text-align: center;
+      text-align: right;
       font-size: 16px;
     }
 }
@@ -43,21 +48,24 @@
   color: rgb(130, 130, 130);
 }
 
+#summary-results {
+  font-weight: bold;
+}
 
 #money_icon {
   color: #FFD400;
-  font-size: 30px;
-  text-align: center;
+  font-size: 26px;
+  text-align: right;
 }
 
 #clock_icon {
   color: #D90368;
-  font-size: 30px;
-  text-align: center;
+  font-size: 26px;
+  text-align: right;
 }
 
 #chart_icon {
   color: rgb(49,37,80);
-  font-size: 30px;
-  text-align: center;
+  font-size: 26px;
+  text-align: right;
 }
