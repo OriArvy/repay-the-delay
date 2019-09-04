@@ -53,19 +53,27 @@ class ClaimsController < ApplicationController
   def index
     @stations = Station.all
     @cancels = Cancel.all
+    @claims = []
+    current_user.claims.each do |claim|
+      if claim.delay_duration.to_i >= 15 || claim.delay_duration == "Train cancelled"
+        @claims << claim
+      end
+    end
 
     @sum = 0
-    current_user.claims.each do |claim|
+    @claims.each do |claim|
       @sum += claim.savings if !claim.savings.nil?
     end
 
+
+
     @claims_pending = 0
-    current_user.claims.each do |claim|
+    @claims.each do |claim|
        @claims_pending += 1 if claim.status == "pending"
     end
 
     @claims_completed = 0
-    current_user.claims.each do |claim|
+    @claims.each do |claim|
        @claims_completed += 1 if claim.status == "completed"
     end
 
