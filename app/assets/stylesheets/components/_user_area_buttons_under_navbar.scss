@@ -7,6 +7,10 @@
   font-family: 'Saira', sans-serif;
   font-size: 16px;
   font-weight: 600;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 90;
 }
 
 .nav-link {
@@ -33,4 +37,8 @@
     -ms-transform: translate(3px,3px);
     -webkit-transform: translate(3px,3px);
     transform: translate(3px,3px);/*move LowerRight*/
+}
+
+.user-nav-pad {
+  height: 44px;
 }

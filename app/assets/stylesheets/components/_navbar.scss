@@ -3,6 +3,11 @@
   background-color: #2E294E;
   color: #fff;
   height: 90px;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 1001;
 }
 
 #nav-heading {

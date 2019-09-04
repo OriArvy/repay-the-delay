@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: space-around;
   color: #FFF;
-  // position: fixed;
+  position: fixed;
+  width: 100%;
   // left: 0;
-  // bottom: 0;
+  bottom: 0;
   height: 55px;
   font-family: 'Saira', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   }
 .footer-links {
@@ -39,17 +40,17 @@
   margin-left: 0;
 }
 
-.space-bottom-footer-home {
-  min-height: calc(100vh - 55px);
-}
+// .space-bottom-footer-home {
+//   min-height: calc(100vh - 55px);
+// }
 
-.space-bottom-footer {
-  min-height: calc(100vh - 55px - 90px);
-}
+// .space-bottom-footer {
+//   min-height: calc(100vh - 55px - 90px);
+// }
 
-.space-bottom-footer-claims {
-  min-height: calc(100vh - 200px);
-}
+// .space-bottom-footer-claims {
+//   min-height: calc(100vh - 200px);
+// }
 
 .train-card {
   display: flex;
