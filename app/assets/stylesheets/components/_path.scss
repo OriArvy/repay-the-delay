@@ -31,10 +31,15 @@
   animation-fill-mode: forwards;
 }
 
+
+  animation: move 4s linear infinite;
+  -webkit-animation: move 4s linear infinite;
+
 @-webkit-keyframes move {
     to {
         stroke-dashoffset: 5;
     }
+
 }
 
 @keyframes move {

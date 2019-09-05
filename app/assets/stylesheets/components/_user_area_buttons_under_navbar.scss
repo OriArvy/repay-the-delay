@@ -11,16 +11,19 @@
   width: 100%;
   left: 0;
   top: 80px;
+  z-index: 1100;
 }
 
 .nav-link {
   color: #fff;
+  z-index: 1100;
 }
 
 .nav-link:hover {
   opacity: 0.95;
   text-decoration: none;
   color: rgb(240, 240, 240);
+  z-index: 1100;
 }
 
 .nav-li {
