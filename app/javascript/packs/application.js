@@ -89,9 +89,9 @@ homeBtn.addEventListener('click', () => {
   let repayGif = document.querySelector(".transition").style.visibility = 'visible';
 })
 
-homeBtn.addEventListener('touchstart click', () => {
-  let repayGif = document.querySelector(".transition").style.visibility = 'visible';
-})
+// homeBtn.addEventListener('touchstart click', () => {
+//   let repayGif = document.querySelector(".transition").style.visibility = 'visible';
+// })
 
 
 
