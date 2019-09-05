@@ -25,11 +25,17 @@
   stroke-dashoffset: 1353;
 
   animation: move 4s linear infinite;
-
+  -webkit-animation: move 4s linear infinite;
 
 }
 
 @keyframes move {
+    100% {
+        stroke-dashoffset: 5;
+    }
+}
+
+@-webkit-keyframes move {
     100% {
         stroke-dashoffset: 5;
     }

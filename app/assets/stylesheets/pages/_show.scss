@@ -11,7 +11,10 @@
   color: white;
   border-radius: 4px;
   width: 100%;
-  box-shadow: 3px 3px 10px rgba(55,55,55,0.4);
+  // box-shadow: 3px 3px 10px rgba(55,55,55,0.4);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(182,6,89);
   font-size: 14px;
   font-weight: bold;
 
@@ -24,7 +27,7 @@
 .tc-text {
   font-size: 13px;
   margin-bottom: 0px;
-
+  color: rgb(49, 37, 80);
 }
 
 .delay-reason {
@@ -47,9 +50,20 @@
   font-size: 18px;
 }
 
+.user-details-text-bold {
+  color: #2E294E;
+  font-weight: 600;
+  font-size: 15px;
+}
+
 .user-details-text {
   color: #2E294E;
-  font-weight: bold;
+  font-size: 15px;
+}
+
+#claim-ticket-select {
+  color: rgb(49, 37, 80);
+  font-size: 14px;
 }
 
 
