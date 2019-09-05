@@ -82,7 +82,7 @@ switchStation1.addEventListener('touchstart click', () => {
 
 // // homage page initiate search
 
-let repayGif = document.querySelector(".transition").style.visibility = 'hidden';
+const repayGif = document.querySelector(".transition");
 const homeBtn = document.getElementById("my-btn");
 
 homeBtn.addEventListener('click', () => {
