@@ -77,6 +77,8 @@ class ClaimsController < ApplicationController
        @claims_completed += 1 if claim.status == "completed"
     end
 
+    @average = (@sum / @claims_completed).round
+
   end
 
   private
