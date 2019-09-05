@@ -10,14 +10,14 @@
   </li>
 </ul>
 <div class="user-nav-pad"></div>
-<div class="p-3">
+<div class="p-3 mt-3">
   <h2 id="claims-headers">Your tickets</h2>
 <div id="carouselExampleControls" class="carousel slide pt-3" data-ride="carousel">
   <div class="carousel-inner">
       <% current_user.tickets.each_with_index do |ticket, index| %>
     <div class="carousel-item <%= 'active' if index == 0 %>">
       <%= cl_image_tag ticket.photo, height: 150, width: 250, crop: :fill, class: "d-block pb-2 w-75" %>
-      <p><strong><%= "Ticket expiring on #{ticket.expiry_date.strftime("%a, %e %b %Y")}" %></strong></p>
+      <p class="p-color-blue"><%= "Ticket expiring on #{ticket.expiry_date.strftime("%a, %e %b %Y")}" %></p>
     </div>
       <% end %>
   </div>
@@ -32,7 +32,7 @@
 </div>
 <hr>
   <% if current_user.photo_card.nil? %>
-  <h2 id="claims-headers" class=pb-3>Your photo card</h2>
+  <h2 id="claims-headers" class="pb-3 pt-3">Your photo card</h2>
   <% else %>
     <h2 id="claims-headers" class="pb-3">Your photo card</h2>
     <div class="card-product">
