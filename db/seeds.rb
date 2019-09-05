@@ -249,6 +249,13 @@ claim_11 = Claim.new(
 )
 claim_11.save!
 
+photo_card1 = PhotoCard.new(
+  card_number: "NFK7154",
+  user_id: user_2.id)
+ben_url = "https://res.cloudinary.com/dsfn47yrk/image/upload/v1567690981/q6xwr2waxt0xiltnpkzt.jpg"
+photo_card1.remote_photo_url = ben_url
+photo_card1.save!
+
 Station.create!(name: "Abbey Wood [ABW]", code: "ABW")
 Station.create!(name: "Aber [ABE]", code: "ABE")
 Station.create!(name: "Abercynon [ACY]", code: "ACY")
