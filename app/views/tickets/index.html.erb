@@ -11,35 +11,35 @@
 </ul>
 <div class="user-nav-pad"></div>
 <div class="p-3 mt-3">
-  <h2 id="claims-headers">Your tickets</h2>
+  <h2 id="claims-headers">Tickets</h2>
 <div id="carouselExampleControls" class="carousel slide pt-3" data-ride="carousel">
   <div class="carousel-inner">
       <% current_user.tickets.each_with_index do |ticket, index| %>
     <div class="carousel-item <%= 'active' if index == 0 %>">
-      <%= cl_image_tag ticket.photo, height: 150, width: 250, crop: :fill, class: "d-block pb-2 w-75" %>
+      <%= cl_image_tag ticket.photo, height: 150, width: 250, crop: :fill, radius: 10, class: "d-block pb-2 w-75" %>
       <p class="p-color-blue"><%= "Ticket expiring on #{ticket.expiry_date.strftime("%a, %e %b %Y")}" %></p>
     </div>
       <% end %>
   </div>
-  <a class="carousel-control-prev mb-3" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a id="no-op" class="carousel-control-prev mb-3" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon mb-3" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next w-75 mb-3" href="#carouselExampleControls" role="button" data-slide="next">
+  <a id="no-op" class="carousel-control-next w-75 mb-3" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon w-75 mb-3" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
 <hr>
   <% if current_user.photo_card.nil? %>
-  <h2 id="claims-headers" class="pb-3 pt-3">Your photo card</h2>
+  <h2 id="claims-headers" class="pb-3 pt-3">Photocard</h2>
   <% else %>
-    <h2 id="claims-headers" class="pb-3">Your photo card</h2>
+    <h2 id="claims-headers" class="pb-3">Photocard</h2>
     <div class="card-product">
       <div class="card-product-infos">
         <div id="search-card" class="mb-3">
-          <%= cl_image_tag current_user.photo_card.photo, height: 150, width: 250, crop: :fill %>
-          <p><strong><%= "Photo card number: #{current_user.photo_card.card_number}" %></strong></p>
+          <%= cl_image_tag current_user.photo_card.photo, height: 150, width: 250, crop: :fill, radius: 10 %>
+          <p class="mt-1"><strong><%= "Photo card number: #{current_user.photo_card.card_number}" %></strong></p>
         </div>
       </div>
     </div>
