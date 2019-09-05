@@ -90,7 +90,7 @@ homeBtn.addEventListener('click', () => {
   repayGif.style.visibility = 'visible'
   setTimeout( function () {
     form.submit();
-  }, 300)
+  }, 4500)
 })
 
 
