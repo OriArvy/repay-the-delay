@@ -82,15 +82,16 @@ switchStation1.addEventListener('touchstart click', () => {
 
 // // homage page initiate search
 
-let repayGif = document.querySelector(".transition").style.visibility = 'hidden';
+const repayGif = document.querySelector(".transition");
+const form = document.querySelector("form");
 const homeBtn = document.getElementById("my-btn");
 
-homeBtn.addEventListener('click', () => {
-  let repayGif = document.querySelector(".transition").style.visibility = 'visible';
-})
-
-homeBtn.addEventListener('touchstart click', () => {
-  let repayGif = document.querySelector(".transition").style.visibility = 'visible';
+homeBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  repayGif.style.display = 'inherit'
+  setTimeout( function () {
+    form.submit();
+  }, 3000)
 })
 
 
