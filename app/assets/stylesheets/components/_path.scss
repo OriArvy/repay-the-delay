@@ -25,14 +25,20 @@
   /* Stroke-dasharray property */
   stroke-dasharray: 1353;
   stroke-dashoffset: 1353;
-
+  -webkit-animation: move 4s linear infinite;
   animation: move 4s linear infinite;
 
 
 }
 
+@-webkit-keyframes move {
+    to {
+        stroke-dashoffset: 5;
+    }
+}
+
 @keyframes move {
-    100% {
+    to {
         stroke-dashoffset: 5;
     }
 }
