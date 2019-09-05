@@ -85,9 +85,9 @@ switchStation1.addEventListener('touchstart click', () => {
 const repayGif = document.querySelector(".transition");
 const homeBtn = document.getElementById("my-btn");
 
-homeBtn.addEventListener('click', () => {
-  let repayGif = document.querySelector(".transition").style.visibility = 'visible';
-})
+// homeBtn.addEventListener('click', () => {
+//   let repayGif = document.querySelector(".transition").style.visibility = 'visible';
+// })
 
 // homeBtn.addEventListener('touchstart click', () => {
 //   let repayGif = document.querySelector(".transition").style.visibility = 'visible';
