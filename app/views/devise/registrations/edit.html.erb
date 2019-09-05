@@ -10,8 +10,8 @@
   </li>
 </ul>
 <div class="user-nav-pad"></div>
-<div class="p-3 text-center">
-  <h2>Edit your Details</h2>
+<div class="p-3">
+  <h2 id="claims-headers" class="pt-3 pb-2">Edit your Details</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
