@@ -28,7 +28,7 @@ user_5 = User.create!(
 ticket_2 = Ticket.new(
   ticket_number: '44444',
   price: 264.23,
-  expiry_date: 20200302,
+  expiry_date: 20190901,
   user: user_2)
   url2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/British_rail_ticket_Wellington_Shrewsbury.jpg/250px-British_rail_ticket_Wellington_Shrewsbury.jpg"
   ticket_2.remote_photo_url = url2
