@@ -88,10 +88,10 @@ const homeBtn = document.getElementById("my-btn");
 
 homeBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  repayGif.style.visibility = 'visible'
+  repayGif.style.display = 'inherit'
   setTimeout( function () {
     form.submit();
-  }, 2500)
+  }, 3000)
 })
 
 
