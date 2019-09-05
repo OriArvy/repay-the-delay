@@ -31,9 +31,8 @@
   animation-fill-mode: forwards;
 }
 
-
-  animation: move 4s linear infinite;
-  -webkit-animation: move 4s linear infinite;
+  // animation: move 4s linear infinite;
+  // -webkit-animation: move 4s linear infinite;
 
 @-webkit-keyframes move {
     to {
