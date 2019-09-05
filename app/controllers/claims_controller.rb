@@ -46,7 +46,7 @@ class ClaimsController < ApplicationController
     ticket = Ticket.find(params[:claim][:ticket_id])
     @claim.ticket = ticket
     @claim.save
-    sleep(3)
+    # sleep(3)
     redirect_to claims_path
   end
 
