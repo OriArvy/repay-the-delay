@@ -1,6 +1,6 @@
   svg {
     padding-left: 15px;
-    margin-left: 32px;
+    margin-left: 42px;
   }
 
 .transition {
@@ -61,22 +61,22 @@
 .dot:nth-child(1){
   animation: firststation 4s linear;
   top: 160px;
-  left: 53px;
+  left: 65px;
 }
 .dot:nth-child(2){
   animation: secondstation 4s linear;
   top: 275px;
-  left: 160px;
+  left: 174px;
 }
 .dot:nth-child(3){
   animation: thirdstation 4s linear;
   top: 410px;
-  left: 275px;
+  left: 287px;
 }
 .dot:nth-child(4){
   animation: fourthstation 4s linear;
   top: 600px;
-  left: 232px;
+  left: 244px;
 }
 
 @keyframes firststation {
