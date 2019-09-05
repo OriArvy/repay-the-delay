@@ -6,7 +6,7 @@ const initSweetalert = (selector, options = {}) => {
     swalButton.addEventListener('click', (event) => {
       event.preventDefault();
       setTimeout( function () {
-        form.submit();
+        document.querySelector(".edit_claim").submit();
       }, 3000)
       swal(options);
     });
