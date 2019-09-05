@@ -23,7 +23,7 @@
       line-height: 1.4;
       margin-bottom: 5px;
       padding-left: 0px;
-      color: rgb(49,37,80);
+      color: #D90368;
       text-align: left;
       font-size: 16px;
     }
@@ -50,6 +50,11 @@
 
 #summary-results {
   font-weight: bold;
+  color: #D90368;
+}
+
+#summary-results-headers {
+  color: rgb(49,37,80)
 }
 
 #money_icon {
