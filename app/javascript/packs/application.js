@@ -86,11 +86,12 @@ const repayGif = document.querySelector(".transition");
 const form = document.querySelector("form");
 const homeBtn = document.getElementById("my-btn");
 
-homeBtn.addEventListener('click', () => {
+homeBtn.addEventListener('click', (event) => {
+  event.preventDefault();
   repayGif.style.visibility = 'visible'
   setTimeout( function () {
     form.submit();
-  }, 4500)
+  }, 2500)
 })
 
 
