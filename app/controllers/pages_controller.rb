@@ -40,8 +40,8 @@ class PagesController < ApplicationController
     time_from_form = params[:departure][:time].split("T")[1]
     # time from form is converted so we can calculate the window for the departure times. Then its converted back to be in the 1250 format.
     converted_time = Time.parse(time_from_form)
-    dep_time_start = (converted_time - 900).strftime("%H%M")
-    dep_time_end = (converted_time + 900).strftime("%H%M")
+    dep_time_start = (converted_time - 360).strftime("%H%M")
+    dep_time_end = (converted_time + 360).strftime("%H%M")
 
 
     day_type = find_weekday(@date)
