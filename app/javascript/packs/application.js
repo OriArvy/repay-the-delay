@@ -5,7 +5,7 @@ import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.css'
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-flatpickr("#ticket-valid-from", { defaultDate: "today", altInput: true, altFormat: "F j, Y", dateFormat: "Y-M-D", });
+flatpickr("#ticket-valid-from", { defaultDate: "today", altInput: true, altFormat: "F j, Y", dateFormat: "Y-m-d", });
 flatpickr("#flat-time", { altInput: true, time_24hr: true, enableTime: true, altFormat: "F j, Y H:i", dateFormat: "Y-m-dTH:i", defaultDate: "today", defaultHour: 12, defaultMinute: 0, placeholder: "xxx"});
 
 
