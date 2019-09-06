@@ -64,7 +64,7 @@ ticket_5 = Ticket.new(
 
 claim_1 = Claim.new(
   train_id: "12345",
-  location_from: "GLD",
+  location_from: "WOK",
   location_to: "WAT",
   delay_duration: "16",
   reason_for_delay: "763",
@@ -73,9 +73,9 @@ claim_1 = Claim.new(
   created_at: nil,
   updated_at: nil,
   departure_date: "25/08/2019",
-  departure_time: "1830",
+  departure_time: "1221",
   status: "pending",
-  savings: 2.50
+  savings: 2.58
 )
 claim_1.save!
 
@@ -90,9 +90,9 @@ claim_2 = Claim.new(
   created_at: nil,
   updated_at: nil,
   departure_date: "28/08/2019",
-  departure_time: "0830",
+  departure_time: "0835",
   status: "completed",
-  savings: 5.00
+  savings: 5.25
 )
 claim_2.save!
 
@@ -109,13 +109,13 @@ claim_3 = Claim.new(
   departure_date: "22/08/2019",
   departure_time: "1830",
   status: "completed",
-  savings: 2.50
+  savings: 3.22
 )
 claim_3.save!
 
 claim_4 = Claim.new(
   train_id: "42345",
-  location_from: "GLD",
+  location_from: "WOK",
   location_to: "WAT",
   delay_duration: "85",
   reason_for_delay: "711",
@@ -126,14 +126,14 @@ claim_4 = Claim.new(
   departure_date: "29/08/2019",
   departure_time: "1730",
   status: "completed",
-  savings: 10.50
+  savings: 10.43
 )
 claim_4.save!
 
 claim_5 = Claim.new(
   train_id: "52345",
   location_from: "GLD",
-  location_to: "WAT",
+  location_to: "WPL",
   delay_duration: "80",
   reason_for_delay: "106",
   ticket_id: ticket_2.id,
@@ -143,7 +143,7 @@ claim_5 = Claim.new(
   departure_date: "05/08/2019",
   departure_time: "0930",
   status: "pending",
-  savings: 10.50
+  savings: 4.75
 )
 claim_5.save!
 
@@ -160,14 +160,14 @@ claim_6 = Claim.new(
   departure_date: "01/08/2019",
   departure_time: "1830",
   status: "completed",
-  savings: 2.50
+  savings: 3.27
 )
 claim_6.save!
 
 claim_7 = Claim.new(
   train_id: "72345",
-  location_from: "WAT",
-  location_to: "GLD",
+  location_from: "GLD",
+  location_to: "WAT",
   delay_duration: "16",
   reason_for_delay: "733",
   ticket_id: ticket_2.id,
@@ -175,15 +175,15 @@ claim_7 = Claim.new(
   created_at: nil,
   updated_at: nil,
   departure_date: "22/07/2019",
-  departure_time: "1830",
+  departure_time: "1630",
   status: "completed",
-  savings: 2.50
+  savings: 2.63
 )
 claim_7.save!
 
 claim_8 = Claim.new(
   train_id: "82345",
-  location_from: "GLD",
+  location_from: "WOK",
   location_to: "WAT",
   delay_duration: "16",
   reason_for_delay: "700",
@@ -192,15 +192,15 @@ claim_8 = Claim.new(
   created_at: nil,
   updated_at: nil,
   departure_date: "07/08/2019",
-  departure_time: "0830",
+  departure_time: "1030",
   status: "completed",
-  savings: 2.50
+  savings: 2.98
 )
 claim_8.save!
 
 claim_9 = Claim.new(
   train_id: "92345",
-  location_from: "WAT",
+  location_from: "WPL",
   location_to: "GLD",
   delay_duration: "16",
   reason_for_delay: "661",
@@ -211,7 +211,7 @@ claim_9 = Claim.new(
   departure_date: "22/06/2019",
   departure_time: "1230",
   status: "completed",
-  savings: 2.50
+  savings: 2.85
 )
 claim_9.save!
 
@@ -228,7 +228,7 @@ claim_10 = Claim.new(
   departure_date: "22/07/2019",
   departure_time: "1650",
   status: "completed",
-  savings: 2.50
+  savings: 2.78
 )
 claim_10.save!
 
@@ -245,7 +245,7 @@ claim_11 = Claim.new(
   departure_date: "21/07/2019",
   departure_time: "1350",
   status: "completed",
-  savings: 2.50
+  savings: 2.48
 )
 claim_11.save!
 
