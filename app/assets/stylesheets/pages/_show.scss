@@ -24,6 +24,20 @@
   margin: 0;
   padding: 0;
 }
+
+.no-claim-alert {
+  color: black;
+  border-radius: 4px;
+  width: 100%;
+  // box-shadow: 3px 3px 10px rgba(55,55,55,0.4);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(182,6,89);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0, 5px;
+}
+
 .tc-text {
   font-size: 13px;
   margin-bottom: 0px;
@@ -66,4 +80,6 @@
   font-size: 14px;
 }
 
-
+.padding-for-on-time-train {
+  padding: 5px 22px;
+}
