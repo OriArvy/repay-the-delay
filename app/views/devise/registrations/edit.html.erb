@@ -49,8 +49,13 @@
       <%= f.input :account_number,
                   required: true,
                   input_html: { autocomplete: "account_number", id: "ticket_ticket" } %>
-      <%= f.input :home_station %>
-      <%= f.input :work_station %>
+
+      <%= f.input :home_station,
+                  required: true,
+                  input_html: { autocomplete: "home_station", id: "ticket_ticket" } %>
+      <%= f.input :work_station,
+                  required: true,
+                  input_html: { autocomplete: "work_station", id: "ticket_ticket" } %>
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,

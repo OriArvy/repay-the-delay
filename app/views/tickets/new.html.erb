@@ -2,7 +2,8 @@
   <%= simple_form_for [@claim, @ticket] do |f| %>
    <%= f.input :ticket_number, label: 'PLEASE PROVIDE TICKET NUMBER', placeholder: "Ticket number", input_html: { id: "ticket_ticket" } %>
     <%= f.input :price, label: 'PRICE OF YOUR TICKET', placeholder: "£", label_input: "£", input_html: { id: "ticket_ticket" } %>
-   <%= f.input :expiry_date, label: 'TICKET EXPIRY DATE', placeholder: "Expiry date", as: :string, input_html: { id: "ticket-valid-from", class: "home-input" } %>
+   <label for="ticket-valid-from" class="form-control-label">TICKET EXPIRY DATE *</label>
+   <input id="ticket-valid-from" name="ticket[expiry_date]" type="date" class="home-input mb-3 flatpickr-mobile" />
    <%= f.input :ticket_type, as: :hidden %>
    <%= image_tag "", width: 300, class: "hidden w-100 pb-3 mt-3", id: "photo-preview" %>
    <%= f.input :photo, input_html: { class: 'd-none',id: "photo-input" }, label_html: { class: 'upload-photo w-100 text-center'}, label: '📷 Upload a ticket' %>

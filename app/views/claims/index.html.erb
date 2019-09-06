@@ -24,14 +24,10 @@
           <div >
             <div class="card-product">
               <div class="card-product-infos">
-                <p>You have already saved:</p>
+                <p id="summary-results-headers">You have already saved:</p>
                 <p id="summary-results">£ <%= @sum.round %> in total</p>
-                <p>On average, you have saved:</p>
+                <p id="summary-results-headers">On average, you have saved:</p>
                 <p id="summary-results">£ <%= @average %> per claim</p>
-                <p>Claims pending:</p>
-                <p id="summary-results"><%= @claims_pending %> </p>
-                <p>Refunds received:</p>
-                <p id="summary-results"> <%= @claims_completed %> </p>
                 </div>
                 <div class="icon_column">
                   <p><i class="fas fa-chart-pie" id="chart_icon"></i></p>
@@ -112,6 +108,9 @@
               <% end %>
             <% end %>
           </div>
+        </div>
+        <div class="s-out">
+          <%= link_to "Sign out",destroy_user_session_path, method: :delete, class: "blue-btn" %>
         </div>
       </div>
     </div>
