@@ -24,11 +24,19 @@ user_5 = User.create!(
   home_station: "BDM", work_station: "STP", title: "Mr", first_name: "Matt", last_name: "Annetts", email: "matt@repay.com", password: "111111", phone_number: "+44 3069 990344", address: "12 London Road", postcode: "SW1A 1AA", city: "London", sort_code: "777777", account_number: "77777777")
 
 
+ticket_1 = Ticket.new(
+  ticket_number: '19284',
+  price: 762.23,
+  expiry_date: 20190908,
+  user: user_2)
+  url1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/British_rail_ticket_Wellington_Shrewsbury.jpg/250px-British_rail_ticket_Wellington_Shrewsbury.jpg"
+  ticket_1.remote_photo_url = url1
+  ticket_1.save!
 
 ticket_2 = Ticket.new(
-  ticket_number: '44444',
+  ticket_number: '14273',
   price: 264.23,
-  expiry_date: 20190901,
+  expiry_date: 20190812,
   user: user_2)
   url2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/British_rail_ticket_Wellington_Shrewsbury.jpg/250px-British_rail_ticket_Wellington_Shrewsbury.jpg"
   ticket_2.remote_photo_url = url2
@@ -64,8 +72,8 @@ ticket_5 = Ticket.new(
 
 claim_1 = Claim.new(
   train_id: "12345",
-  location_from: "WOK",
-  location_to: "WAT",
+  location_from: "BDM",
+  location_to: "STP",
   delay_duration: "16",
   reason_for_delay: "763",
   ticket_id: ticket_2.id,
@@ -81,8 +89,8 @@ claim_1.save!
 
 claim_2 = Claim.new(
   train_id: "22345",
-  location_from: "WAT",
-  location_to: "GLD",
+  location_from: "RDG",
+  location_to: "CLJ",
   delay_duration: "45",
   reason_for_delay: "763",
   ticket_id: ticket_2.id,
@@ -98,8 +106,8 @@ claim_2.save!
 
 claim_3 = Claim.new(
   train_id: "32345",
-  location_from: "WAT",
-  location_to: "GLD",
+  location_from: "MAN",
+  location_to: "LVC",
   delay_duration: "16",
   reason_for_delay: "118",
   ticket_id: ticket_2.id,
@@ -115,8 +123,8 @@ claim_3.save!
 
 claim_4 = Claim.new(
   train_id: "42345",
-  location_from: "WOK",
-  location_to: "WAT",
+  location_from: "EDB",
+  location_to: "STP",
   delay_duration: "85",
   reason_for_delay: "711",
   ticket_id: ticket_2.id,
@@ -132,8 +140,8 @@ claim_4.save!
 
 claim_5 = Claim.new(
   train_id: "52345",
-  location_from: "GLD",
-  location_to: "WPL",
+  location_from: "SHF",
+  location_to: "NOT",
   delay_duration: "80",
   reason_for_delay: "106",
   ticket_id: ticket_2.id,
@@ -149,8 +157,8 @@ claim_5.save!
 
 claim_6 = Claim.new(
   train_id: "62345",
-  location_from: "WAT",
-  location_to: "GLD",
+  location_from: "BHI",
+  location_to: "BRI",
   delay_duration: "16",
   reason_for_delay: "111",
   ticket_id: ticket_2.id,
@@ -166,8 +174,8 @@ claim_6.save!
 
 claim_7 = Claim.new(
   train_id: "72345",
-  location_from: "GLD",
-  location_to: "WAT",
+  location_from: "GLC",
+  location_to: "EDB",
   delay_duration: "16",
   reason_for_delay: "733",
   ticket_id: ticket_2.id,
@@ -200,10 +208,10 @@ claim_8.save!
 
 claim_9 = Claim.new(
   train_id: "92345",
-  location_from: "WPL",
-  location_to: "GLD",
+  location_from: "CDF",
+  location_to: "SWI",
   delay_duration: "16",
-  reason_for_delay: "661",
+  reason_for_delay: "699",
   ticket_id: ticket_2.id,
   user_id: user_2.id,
   created_at: nil,
@@ -234,8 +242,8 @@ claim_10.save!
 
 claim_11 = Claim.new(
   train_id: "11345",
-  location_from: "WAT",
-  location_to: "GLD",
+  location_from: "EXC",
+  location_to: "TAU",
   delay_duration: "27",
   reason_for_delay: "785",
   ticket_id: ticket_2.id,
