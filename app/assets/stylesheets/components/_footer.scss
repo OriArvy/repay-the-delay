@@ -1,7 +1,7 @@
 .footer {
   background-color: #2E294E;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: space-around;
   color: #FFF;
   position: fixed;
@@ -18,6 +18,10 @@
 .footer-links {
   display: flex;
   align-items: center;
+  display: flex;
+  // align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .footer-links a {
   color: white;
@@ -31,10 +35,12 @@
 
 .footer-item {
     white-space: nowrap;
+
 }
 
 .footer li {
   list-style: none;
+
 }
 
 .row {
